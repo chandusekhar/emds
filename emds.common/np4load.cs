@@ -16,9 +16,15 @@ using Encog.ML.Data.Basic;
 
 namespace emds.common
 {
+    enum ActivationFunction
+    {
+        ActivationLinear,
+        ActivationTANH
+    }
+
     public class np4load
     {
-        private XDocument xmlNeuroNet;
+        private XElement xmlNeuroNet;
 
         /// <summary>
         /// Загружает xml с нейросетью
@@ -26,15 +32,49 @@ namespace emds.common
         /// <param name="path">Перед передачей в конструктор должен быть проверен на существование файла</param>
         public np4load(string path)
         {
-            xmlNeuroNet = XDocument.Load(path);
+            xmlNeuroNet = XElement.Load(path);
         }
 
         public BasicNetwork GetNeuralNetwork()
         {
             BasicNetwork net = new BasicNetwork();
-            xmlNeuroNet
+            var netStr = xmlNeuroNet.Element("NetStruct").Elements();
+            var inputL = netStr.First(x => x.Attribute("Name") != null && x.Attribute("Name").Value == "Input");
+
+            net.AddLayer(
+                new BasicLayer(
+                    GetActivationFunction(inputL.Element("ActivationFunction").Attribute("Type").Value.Trim()),
+                    false,
+                    int.Parse(inputL.Attribute("Size").Value)));
+
+            var outputL = netStr.First(x => x.Attribute("Name") != null && x.Attribute("Name").Value == "Output");
+
+            XElement hiddenL = netStr.First(x => x.Name == "HiddenLayers");
+            foreach (var layer in hiddenL.Elements("Layer"))
+            {
+                net.AddLayer(new BasicLayer(
+                    GetActivationFunction(layer.Element("ActivationFunction").Attribute("Type").Value.Trim()),
+                    false,
+                    int.Parse(layer.Attribute("Size").Value)));
+            }
+
+            net.AddLayer(
+                new BasicLayer(
+                    GetActivationFunction(outputL.Element("ActivationFunction").Attribute("Type").Value.Trim()),
+                    false,
+                    int.Parse(outputL.Attribute("Size").Value)));
 
             return net;
+        }
+
+        private IActivationFunction GetActivationFunction(string funName)
+        {
+            switch (funName)
+            {
+                case "ActivationLinear": return new ActivationLinear();
+                case "ActivationTANH": return new ActivationTANH();
+                default: return null;
+            }
         }
     }
 }

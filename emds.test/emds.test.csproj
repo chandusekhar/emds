@@ -47,6 +47,16 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\emds.common\emds.common.csproj">
+      <Project>{75621124-1cbd-49c6-9a85-898a8dbf05fc}</Project>
+      <Name>emds.common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\encog-core-cs\encog-core-cs.csproj">
+      <Project>{ac6fadf9-0904-4ebd-b22c-1c787c7e7a95}</Project>
+      <Name>encog-core-cs</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
