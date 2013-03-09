@@ -27,9 +27,14 @@ namespace emds.common
         public np4load(string path)
         {
             xmlNeuroNet = XDocument.Load(path);
-            
         }
 
-         
+        public BasicNetwork GetNeuralNetwork()
+        {
+            BasicNetwork net = new BasicNetwork();
+            xmlNeuroNet
+
+            return net;
+        }
     }
 }
