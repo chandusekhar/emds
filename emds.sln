@@ -1,0 +1,102 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "emds.test", "emds.test\emds.test.csproj", "{D1D8BA46-0779-4757-9FEB-DAB72BCB5F82}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "emds.common", "emds.common\emds.common.csproj", "{75621124-1CBD-49C6-9A85-898A8DBF05FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "encog-core-cs", "encog-core-cs\encog-core-cs.csproj", "{AC6FADF9-0904-4EBD-B22C-1C787C7E7A95}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NeuralNetworks", "NeuralNetworks", "{6577B9A4-CFB1-4BA2-92D4-88A3332784E1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cardiology", "Cardiology", "{9D92852D-049E-43A7-9566-CBC2A37F3789}"
+	ProjectSection(SolutionItems) = preProject
+		NeuralNetworks\Cardiology\аритмии_и_блокады_сердца.np4 = NeuralNetworks\Cardiology\аритмии_и_блокады_сердца.np4
+		NeuralNetworks\Cardiology\аритмии_и_блокады_сердца.xml = NeuralNetworks\Cardiology\аритмии_и_блокады_сердца.xml
+		NeuralNetworks\Cardiology\гипертоническая_болезнь.np4 = NeuralNetworks\Cardiology\гипертоническая_болезнь.np4
+		NeuralNetworks\Cardiology\гипертоническая_болезнь.xml = NeuralNetworks\Cardiology\гипертоническая_болезнь.xml
+		NeuralNetworks\Cardiology\ибс.np4 = NeuralNetworks\Cardiology\ибс.np4
+		NeuralNetworks\Cardiology\ибс.xml = NeuralNetworks\Cardiology\ибс.xml
+		NeuralNetworks\Cardiology\инфаркт_миокарда.np4 = NeuralNetworks\Cardiology\инфаркт_миокарда.np4
+		NeuralNetworks\Cardiology\инфаркт_миокарда.xml = NeuralNetworks\Cardiology\инфаркт_миокарда.xml
+		NeuralNetworks\Cardiology\хсн.np4 = NeuralNetworks\Cardiology\хсн.np4
+		NeuralNetworks\Cardiology\хсн.xml = NeuralNetworks\Cardiology\хсн.xml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Endocrinology", "Endocrinology", "{018EB813-EFD1-4583-A1D3-C96916469EA7}"
+	ProjectSection(SolutionItems) = preProject
+		NeuralNetworks\Endocrinology\гипергликемия.np4 = NeuralNetworks\Endocrinology\гипергликемия.np4
+		NeuralNetworks\Endocrinology\гипергликемия.xml = NeuralNetworks\Endocrinology\гипергликемия.xml
+		NeuralNetworks\Endocrinology\гипертиреоз.np4 = NeuralNetworks\Endocrinology\гипертиреоз.np4
+		NeuralNetworks\Endocrinology\гипертиреоз.xml = NeuralNetworks\Endocrinology\гипертиреоз.xml
+		NeuralNetworks\Endocrinology\гормональный_статус.np4 = NeuralNetworks\Endocrinology\гормональный_статус.np4
+		NeuralNetworks\Endocrinology\гормональный_статус.xml = NeuralNetworks\Endocrinology\гормональный_статус.xml
+		NeuralNetworks\Endocrinology\диабетическая стопа_микромакроангиопатия.np4 = NeuralNetworks\Endocrinology\диабетическая стопа_микромакроангиопатия.np4
+		NeuralNetworks\Endocrinology\диабетическая стопа_микромакроангиопатия.xml = NeuralNetworks\Endocrinology\диабетическая стопа_микромакроангиопатия.xml
+		NeuralNetworks\Endocrinology\диабетическая_стопа_полинеиропатия.np4 = NeuralNetworks\Endocrinology\диабетическая_стопа_полинеиропатия.np4
+		NeuralNetworks\Endocrinology\диабетическая_стопа_полинеиропатия.xml = NeuralNetworks\Endocrinology\диабетическая_стопа_полинеиропатия.xml
+		NeuralNetworks\Endocrinology\зоб.np4 = NeuralNetworks\Endocrinology\зоб.np4
+		NeuralNetworks\Endocrinology\зоб.xml = NeuralNetworks\Endocrinology\зоб.xml
+		NeuralNetworks\Endocrinology\сахарный_диабет_1тип.np4 = NeuralNetworks\Endocrinology\сахарный_диабет_1тип.np4
+		NeuralNetworks\Endocrinology\сахарный_диабет_1тип.xml = NeuralNetworks\Endocrinology\сахарный_диабет_1тип.xml
+		NeuralNetworks\Endocrinology\сахарный_диабет_2тип.np4 = NeuralNetworks\Endocrinology\сахарный_диабет_2тип.np4
+		NeuralNetworks\Endocrinology\сахарный_диабет_2тип.xml = NeuralNetworks\Endocrinology\сахарный_диабет_2тип.xml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gastroenterology", "Gastroenterology", "{E5C9AC49-84E4-4D6F-A6ED-8504DCFADEAF}"
+	ProjectSection(SolutionItems) = preProject
+		NeuralNetworks\Gastroenterology\гастрит.np4 = NeuralNetworks\Gastroenterology\гастрит.np4
+		NeuralNetworks\Gastroenterology\гастрит.xml = NeuralNetworks\Gastroenterology\гастрит.xml
+		NeuralNetworks\Gastroenterology\гепатит.np4 = NeuralNetworks\Gastroenterology\гепатит.np4
+		NeuralNetworks\Gastroenterology\гепатит.xml = NeuralNetworks\Gastroenterology\гепатит.xml
+		NeuralNetworks\Gastroenterology\панкреатит.np4 = NeuralNetworks\Gastroenterology\панкреатит.np4
+		NeuralNetworks\Gastroenterology\панкреатит.xml = NeuralNetworks\Gastroenterology\панкреатит.xml
+		NeuralNetworks\Gastroenterology\цирроз_печени.np4 = NeuralNetworks\Gastroenterology\цирроз_печени.np4
+		NeuralNetworks\Gastroenterology\цирроз_печени.xml = NeuralNetworks\Gastroenterology\цирроз_печени.xml
+		NeuralNetworks\Gastroenterology\язвенная_болезнь.np4 = NeuralNetworks\Gastroenterology\язвенная_болезнь.np4
+		NeuralNetworks\Gastroenterology\язвенная_болезнь.xml = NeuralNetworks\Gastroenterology\язвенная_болезнь.xml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Отдаленное село", "Отдаленное село", "{B58AC43B-B647-4310-97DE-9B7B96D478E5}"
+	ProjectSection(SolutionItems) = preProject
+		NeuralNetworks\Cardiology\Отдаленное село\аритмии_и_блокады_сердца.np4 = NeuralNetworks\Cardiology\Отдаленное село\аритмии_и_блокады_сердца.np4
+		NeuralNetworks\Cardiology\Отдаленное село\аритмии_и_блокады_сердца.xml = NeuralNetworks\Cardiology\Отдаленное село\аритмии_и_блокады_сердца.xml
+		NeuralNetworks\Cardiology\Отдаленное село\гипертоническая_болезнь.np4 = NeuralNetworks\Cardiology\Отдаленное село\гипертоническая_болезнь.np4
+		NeuralNetworks\Cardiology\Отдаленное село\гипертоническая_болезнь.xml = NeuralNetworks\Cardiology\Отдаленное село\гипертоническая_болезнь.xml
+		NeuralNetworks\Cardiology\Отдаленное село\ибс.np4 = NeuralNetworks\Cardiology\Отдаленное село\ибс.np4
+		NeuralNetworks\Cardiology\Отдаленное село\ибс.xml = NeuralNetworks\Cardiology\Отдаленное село\ибс.xml
+		NeuralNetworks\Cardiology\Отдаленное село\инфаркт_миокарда.np4 = NeuralNetworks\Cardiology\Отдаленное село\инфаркт_миокарда.np4
+		NeuralNetworks\Cardiology\Отдаленное село\инфаркт_миокарда.xml = NeuralNetworks\Cardiology\Отдаленное село\инфаркт_миокарда.xml
+		NeuralNetworks\Cardiology\Отдаленное село\хсн.np4 = NeuralNetworks\Cardiology\Отдаленное село\хсн.np4
+		NeuralNetworks\Cardiology\Отдаленное село\хсн.xml = NeuralNetworks\Cardiology\Отдаленное село\хсн.xml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D1D8BA46-0779-4757-9FEB-DAB72BCB5F82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1D8BA46-0779-4757-9FEB-DAB72BCB5F82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1D8BA46-0779-4757-9FEB-DAB72BCB5F82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1D8BA46-0779-4757-9FEB-DAB72BCB5F82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75621124-1CBD-49C6-9A85-898A8DBF05FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75621124-1CBD-49C6-9A85-898A8DBF05FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75621124-1CBD-49C6-9A85-898A8DBF05FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75621124-1CBD-49C6-9A85-898A8DBF05FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC6FADF9-0904-4EBD-B22C-1C787C7E7A95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC6FADF9-0904-4EBD-B22C-1C787C7E7A95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC6FADF9-0904-4EBD-B22C-1C787C7E7A95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC6FADF9-0904-4EBD-B22C-1C787C7E7A95}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9D92852D-049E-43A7-9566-CBC2A37F3789} = {6577B9A4-CFB1-4BA2-92D4-88A3332784E1}
+		{018EB813-EFD1-4583-A1D3-C96916469EA7} = {6577B9A4-CFB1-4BA2-92D4-88A3332784E1}
+		{E5C9AC49-84E4-4D6F-A6ED-8504DCFADEAF} = {6577B9A4-CFB1-4BA2-92D4-88A3332784E1}
+		{B58AC43B-B647-4310-97DE-9B7B96D478E5} = {9D92852D-049E-43A7-9566-CBC2A37F3789}
+	EndGlobalSection
+EndGlobal

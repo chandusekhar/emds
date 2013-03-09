@@ -1,0 +1,668 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FormTemplate FormatNumber="1.1" Id="9a86799d-b0ff-483d-bb10-bfdd2275c4fc">
+  <Fields>
+    <NumberFormField Id="1" Title="День рождения" Description="" />
+    <SelectFormField Id="2" Title="Месяц рождения" Description="">
+      <Options>
+        <Option Id="1" Title="Январь" Value="1" />
+        <Option Id="2" Title="Февраль" Value="2" />
+        <Option Id="3" Title="Март" Value="3" />
+        <Option Id="4" Title="Апрель" Value="4" />
+        <Option Id="5" Title="Май" Value="5" />
+        <Option Id="6" Title="Июнь" Value="6" />
+        <Option Id="7" Title="Июль" Value="7" />
+        <Option Id="8" Title="Август" Value="8" />
+        <Option Id="9" Title="Сентябрь" Value="9" />
+        <Option Id="10" Title="Октябрь" Value="10" />
+        <Option Id="11" Title="Ноябрь" Value="11" />
+        <Option Id="12" Title="Декабрь" Value="12" />
+      </Options>
+    </SelectFormField>
+    <NumberFormField Id="3" Title="Возраст" Description="" />
+    <SelectFormField Id="4" Title="Пол" Description="">
+      <Options>
+        <Option Id="1" Title="Мужской" Value="3" />
+        <Option Id="2" Title="Женский" Value="4" />
+      </Options>
+    </SelectFormField>
+    <NumberFormField Id="5" Title="Рост(см)" Description="" />
+    <SelectFormField Id="16" Title="Как часто Вы ощущаете изжогу?" Description="">
+      <Options>
+        <Option Id="1" Title="Изжоги нет" Value="0" />
+        <Option Id="2" Title="Реже трех раз в день" Value="1" />
+        <Option Id="3" Title="Три и более раз в день" Value="2" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="17" Title="Изжога обычно возникает после еды?" Description="">
+      <Options>
+        <Option Id="1" Title="Изжоги нет" Value="0" />
+        <Option Id="2" Title="Нет" Value="1" />
+        <Option Id="3" Title="Да" Value="2" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="18" Title="Изжога обычно возникает при наклонах и в положении лежа" Description="">
+      <Options>
+        <Option Id="1" Title="Изжоги нет" Value="0" />
+        <Option Id="2" Title="Нет" Value="1" />
+        <Option Id="3" Title="Да" Value="2" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="25" Title="Бывает ли у Вас срыгивание пищи?" Description="">
+      <Options>
+        <Option Id="0" Title="Да" Value="1" />
+        <Option Id="1" Title="Нет" Value="0" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="26" Title="Ощущаете ли Вы тошноту?" Description="">
+      <Options>
+        <Option Id="0" Title="Да" Value="1" />
+        <Option Id="1" Title="Нет" Value="0" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="27" Title="Беспокоит ли Вас рвота?" Description="">
+      <Options>
+        <Option Id="1" Title="Нет" Value="0" />
+        <Option Id="2" Title="Да, пищей" Value="1" />
+        <Option Id="3" Title="Да, пищей с примесью желчи" Value="2" />
+        <Option Id="4" Title="Да, рвотными массами с примесью крови, в виде «кофейной гущи»" Value="3" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="30" Title="Ощущаете ли Вы боли в животе?" Description="">
+      <Options>
+        <Option Id="0" Title="Да" Value="1" />
+        <Option Id="1" Title="Нет" Value="0" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="46" Title="Ощущаете ли Вы тяжесть в животе после еды" Description="">
+      <Options>
+        <Option Id="0" Title="Да" Value="1" />
+        <Option Id="1" Title="Нет" Value="0" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="48" Title="Замечали ли Вы беспричинное появление синячков на коже?" Description="">
+      <Options>
+        <Option Id="0" Title="Да" Value="1" />
+        <Option Id="1" Title="Нет" Value="0" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="49" Title="Беспокоит ли Вас кожный зуд?" Description="">
+      <Options>
+        <Option Id="1" Title="Нет" Value="0" />
+        <Option Id="2" Title="Да, слабый" Value="1" />
+        <Option Id="3" Title="Да, умеренный" Value="2" />
+        <Option Id="4" Title="Да, выраженный" Value="3" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="50" Title="Замечали ли Вы увеличение живота в объеме?" Description="">
+      <Options>
+        <Option Id="0" Title="Да" Value="1" />
+        <Option Id="1" Title="Нет" Value="0" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="52" Title="У Вас регулярный стул?" Description="">
+      <Options>
+        <Option Id="1" Title="Да" Value="0" />
+        <Option Id="2" Title="Нет, стул реже трех раз в неделю" Value="1" />
+        <Option Id="3" Title="нет, стул три и более раз в день" Value="3" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="53" Title="Нарушения стула наблюдаются" Description="">
+      <Options>
+        <Option Id="1" Title="Нет нарушений" Value="0" />
+        <Option Id="2" Title="Более 3 недель" Value="1" />
+        <Option Id="3" Title="Более 6 месяцев" Value="2" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="54" Title="Консистенция каловых масс" Description="">
+      <Options>
+        <Option Id="1" Title="Оформленные" Value="0" />
+        <Option Id="2" Title="Кашицеобразные" Value="1" />
+        <Option Id="3" Title="Жидкие (водянистые)" Value="2" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="55" Title="Вы наблюдали в каловых массах примеси слизи?" Description="">
+      <Options>
+        <Option Id="0" Title="Да" Value="1" />
+        <Option Id="1" Title="Нет" Value="0" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="56" Title="Вы наблюдали в каловых массах примеси крови?" Description="">
+      <Options>
+        <Option Id="0" Title="Да" Value="1" />
+        <Option Id="1" Title="Нет" Value="0" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="68" Title="Контакт с токсическими веществами" Description="">
+      <Options>
+        <Option Id="0" Title="Да" Value="1" />
+        <Option Id="1" Title="Нет" Value="0" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="69" Title="Контакт с биологическими средами" Description="">
+      <Options>
+        <Option Id="0" Title="Да" Value="1" />
+        <Option Id="1" Title="Нет" Value="0" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="70" Title="Эмоциональное напряжение" Description="">
+      <Options>
+        <Option Id="0" Title="Да" Value="1" />
+        <Option Id="1" Title="Нет" Value="0" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="71" Title="Тяжелые физические нагрузки" Description="">
+      <Options>
+        <Option Id="0" Title="Да" Value="1" />
+        <Option Id="1" Title="Нет" Value="0" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="72" Title="Ежедневный прием лекарственных средств" Description="">
+      <Options>
+        <Option Id="1" Title="Нет" Value="0" />
+        <Option Id="2" Title="1-2 препарата" Value="1" />
+        <Option Id="3" Title="2 и более препаратов" Value="2" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="73" Title="Прием обезболивающих препаратов (НПВС)" Description="">
+      <Options>
+        <Option Id="1" Title="Нет" Value="0" />
+        <Option Id="2" Title="Эпизодически" Value="1" />
+        <Option Id="3" Title="Регулярно" Value="2" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="74" Title="Перенесенный ранее вирусный гепатит" Description="">
+      <Options>
+        <Option Id="0" Title="Да" Value="1" />
+        <Option Id="1" Title="Нет" Value="0" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="75" Title="Употребление алкоголя" Description="">
+      <Options>
+        <Option Id="1" Title="Нет" Value="0" />
+        <Option Id="2" Title="Иногда" Value="1" />
+        <Option Id="3" Title="Регулярно" Value="2" />
+        <Option Id="4" Title="Запоями" Value="3" />
+      </Options>
+    </SelectFormField>
+    <NumberFormField Id="103" Title="Индекс массы тела" Description="" />
+    <SelectFormField Id="104" Title="Желтушность кожных покровов, склер" Description="">
+      <Options>
+        <Option Id="0" Title="Да" Value="1" />
+        <Option Id="1" Title="Нет" Value="0" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="105" Title="Бледность кожных покровов и слизистых" Description="">
+      <Options>
+        <Option Id="0" Title="Да" Value="1" />
+        <Option Id="1" Title="Нет" Value="0" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="106" Title="Наличие гиперпигментации кожи" Description="">
+      <Options>
+        <Option Id="0" Title="Да" Value="1" />
+        <Option Id="1" Title="Нет" Value="0" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="107" Title="Наличие расчесов на коже" Description="">
+      <Options>
+        <Option Id="0" Title="Да" Value="1" />
+        <Option Id="1" Title="Нет" Value="0" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="108" Title="Наличие телеангиэктазий («сосудистых звездочек»)" Description="">
+      <Options>
+        <Option Id="0" Title="Да" Value="1" />
+        <Option Id="1" Title="Нет" Value="0" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="109" Title="Наличие варикозно расширенных вен передней брюшной стенки" Description="">
+      <Options>
+        <Option Id="0" Title="Да" Value="1" />
+        <Option Id="1" Title="Нет" Value="0" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="110" Title="«Печеночные ладони»" Description="">
+      <Options>
+        <Option Id="0" Title="Да" Value="1" />
+        <Option Id="1" Title="Нет" Value="0" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="111" Title="Ксантелазмы, ксантомы" Description="">
+      <Options>
+        <Option Id="0" Title="Да" Value="1" />
+        <Option Id="1" Title="Нет" Value="0" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="112" Title="Наличие симптома «кровавой росы»" Description="">
+      <Options>
+        <Option Id="0" Title="Да" Value="1" />
+        <Option Id="1" Title="Нет" Value="0" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="113" Title="Отеки нижних конечностей" Description="">
+      <Options>
+        <Option Id="1" Title="Нет" Value="0" />
+        <Option Id="2" Title="Пастозность" Value="1" />
+        <Option Id="3" Title="Выраженные отеки" Value="2" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="114" Title="Язык" Description="">
+      <Options>
+        <Option Id="1" Title="Чистый" Value="0" />
+        <Option Id="2" Title="Обложен белым налетом" Value="1" />
+        <Option Id="3" Title="Обложен желтым налетом" Value="2" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="119" Title="Форма живота" Description="">
+      <Options>
+        <Option Id="1" Title="Обычная" Value="0" />
+        <Option Id="2" Title="Увеличен за счет ацита" Value="1" />
+        <Option Id="3" Title="Увеличен за счет подкожной клетчатки" Value="2" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="122" Title="Живот при пальпации" Description="">
+      <Options>
+        <Option Id="1" Title="Безболезненный" Value="0" />
+        <Option Id="2" Title="Чувствительный" Value="1" />
+        <Option Id="3" Title="Болезненный" Value="2" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="123" Title="Преимущественная локализация боли в эпигастрии" Description="">
+      <Options>
+        <Option Id="0" Title="Да" Value="1" />
+        <Option Id="1" Title="Нет" Value="0" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="124" Title="Преимущественная локализация боли в левом подреберье" Description="">
+      <Options>
+        <Option Id="0" Title="Да" Value="1" />
+        <Option Id="1" Title="Нет" Value="0" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="125" Title="Преимущественная локализация боли в правом подреберье" Description="">
+      <Options>
+        <Option Id="0" Title="Да" Value="1" />
+        <Option Id="1" Title="Нет" Value="0" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="126" Title="Преимущественная локализация боли в околопупочной области" Description="">
+      <Options>
+        <Option Id="0" Title="Да" Value="1" />
+        <Option Id="1" Title="Нет" Value="0" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="127" Title="Преимущественная локализация боли в гипогастральной области" Description="">
+      <Options>
+        <Option Id="0" Title="Да" Value="1" />
+        <Option Id="1" Title="Нет" Value="0" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="128" Title="Преимущественная локализация боли в правой подвздошной области" Description="">
+      <Options>
+        <Option Id="0" Title="Да" Value="1" />
+        <Option Id="1" Title="Нет" Value="0" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="129" Title="Преимущественная локализация боли в левой подвздошной области" Description="">
+      <Options>
+        <Option Id="0" Title="Да" Value="1" />
+        <Option Id="1" Title="Нет" Value="0" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="130" Title="Преимущественная локализация боли по правому фланку" Description="">
+      <Options>
+        <Option Id="0" Title="Да" Value="1" />
+        <Option Id="1" Title="Нет" Value="0" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="131" Title="Преимущественная локализация боли по левому фланку" Description="">
+      <Options>
+        <Option Id="0" Title="Да" Value="1" />
+        <Option Id="1" Title="Нет" Value="0" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="132" Title="Болезненность в точке желчного пузыря" Description="">
+      <Options>
+        <Option Id="0" Title="Да" Value="1" />
+        <Option Id="1" Title="Нет" Value="0" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="137" Title="Урчание при пальпации живота" Description="">
+      <Options>
+        <Option Id="0" Title="Да" Value="1" />
+        <Option Id="1" Title="Нет" Value="0" />
+      </Options>
+    </SelectFormField>
+    <NumberFormField Id="138" Title="Ординаты Курлова - Первая" Description="" />
+    <NumberFormField Id="139" Title="Ординаты Курлова - Вторая" Description="" />
+    <NumberFormField Id="140" Title="Ординаты Курлова - Третья" Description="" />
+    <SelectFormField Id="141" Title="Печень при пальпации" Description="">
+      <Options>
+        <Option Id="1" Title="Эластичная" Value="0" />
+        <Option Id="2" Title="Плотная" Value="1" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="142" Title="Край печени" Description="">
+      <Options>
+        <Option Id="1" Title="Острый" Value="0" />
+        <Option Id="2" Title="Закругленный" Value="1" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="143" Title="Селезенка" Description="">
+      <Options>
+        <Option Id="1" Title="Не пальпируется" Value="0" />
+        <Option Id="2" Title="Пальпируется краем" Value="1" />
+        <Option Id="3" Title="Выступает ниже края реберной дуги" Value="2" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="144" Title="Гемоглобин" Description="">
+      <Options>
+        <Option Id="1" Title="Норма" Value="0" />
+        <Option Id="2" Title="Повышен" Value="1" />
+        <Option Id="3" Title="Снижен" Value="2" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="145" Title="Эритроциты" Description="">
+      <Options>
+        <Option Id="1" Title="Норма" Value="0" />
+        <Option Id="2" Title="Повышены" Value="1" />
+        <Option Id="3" Title="Снижены" Value="2" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="146" Title="Лейкоциты" Description="">
+      <Options>
+        <Option Id="1" Title="Норма" Value="0" />
+        <Option Id="2" Title="Повышены" Value="1" />
+        <Option Id="3" Title="Снижены" Value="2" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="147" Title="Тромбоциты" Description="">
+      <Options>
+        <Option Id="1" Title="Норма" Value="0" />
+        <Option Id="2" Title="Повышены" Value="1" />
+        <Option Id="3" Title="Снижены" Value="2" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="148" Title="СОЭ" Description="">
+      <Options>
+        <Option Id="1" Title="Норма" Value="0" />
+        <Option Id="2" Title="Повышена" Value="1" />
+        <Option Id="3" Title="Снижена" Value="2" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="149" Title="Общий белок" Description="">
+      <Options>
+        <Option Id="1" Title="Норма" Value="0" />
+        <Option Id="2" Title="Повышен" Value="1" />
+        <Option Id="3" Title="Снижен" Value="2" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="150" Title="Глюкоза" Description="">
+      <Options>
+        <Option Id="1" Title="Норма" Value="0" />
+        <Option Id="2" Title="Повышена" Value="1" />
+        <Option Id="3" Title="Снижена" Value="2" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="151" Title="Креатинин" Description="">
+      <Options>
+        <Option Id="1" Title="Норма" Value="0" />
+        <Option Id="2" Title="Повышен" Value="1" />
+        <Option Id="3" Title="Снижен" Value="2" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="153" Title="Холестерин" Description="">
+      <Options>
+        <Option Id="1" Title="Норма" Value="0" />
+        <Option Id="2" Title="Повышен" Value="1" />
+        <Option Id="3" Title="Снижен" Value="2" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="154" Title="Билирубин прямой" Description="">
+      <Options>
+        <Option Id="1" Title="Норма" Value="0" />
+        <Option Id="2" Title="Повышен" Value="1" />
+        <Option Id="3" Title="Снижен" Value="2" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="155" Title="Билирубин непрямой" Description="">
+      <Options>
+        <Option Id="1" Title="Норма" Value="0" />
+        <Option Id="2" Title="Повышен" Value="1" />
+        <Option Id="3" Title="Снижен" Value="2" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="156" Title="АСТ" Description="">
+      <Options>
+        <Option Id="1" Title="Норма" Value="0" />
+        <Option Id="2" Title="Повышена до 3 норм" Value="1" />
+        <Option Id="3" Title="Повышена от 3 до 10 норм" Value="2" />
+        <Option Id="4" Title="Повышена более 10 норм" Value="3" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="157" Title="АЛТ" Description="">
+      <Options>
+        <Option Id="1" Title="Норма" Value="0" />
+        <Option Id="2" Title="Повышена до 3 норм" Value="1" />
+        <Option Id="3" Title="Повышена от 3 до 10 норм" Value="2" />
+        <Option Id="4" Title="Повышена более 10 норм" Value="3" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="158" Title="Гамма-ГТП" Description="">
+      <Options>
+        <Option Id="1" Title="Норма" Value="0" />
+        <Option Id="2" Title="Повышена до 3 норм" Value="1" />
+        <Option Id="3" Title="Повышена от 3 до 10 норм" Value="2" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="159" Title="ЩФ" Description="">
+      <Options>
+        <Option Id="1" Title="Норма" Value="0" />
+        <Option Id="2" Title="Повышена до 3 норм" Value="1" />
+        <Option Id="3" Title="Повышена от 3 до 10 норм" Value="2" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="160" Title="Альфа-амилаза" Description="">
+      <Options>
+        <Option Id="1" Title="Норма" Value="0" />
+        <Option Id="2" Title="Повышена" Value="1" />
+        <Option Id="3" Title="Снижена" Value="2" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="161" Title="СРП" Description="">
+      <Options>
+        <Option Id="1" Title="Норма" Value="0" />
+        <Option Id="2" Title="Повышен" Value="1" />
+        <Option Id="3" Title="Понижен" Value="2" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="170" Title="ПТИ" Description="">
+      <Options>
+        <Option Id="1" Title="Норма" Value="0" />
+        <Option Id="2" Title="Повышен" Value="1" />
+        <Option Id="3" Title="Снижен" Value="2" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="171" Title="Фибриноген" Description="">
+      <Options>
+        <Option Id="1" Title="Норма" Value="0" />
+        <Option Id="2" Title="Повышен" Value="1" />
+        <Option Id="3" Title="Снижен" Value="2" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="172" Title="АТ к Н.р." Description="">
+      <Options>
+        <Option Id="1" Title="Нет" Value="0" />
+        <Option Id="2" Title="Низкий титр" Value="1" />
+        <Option Id="3" Title="Высокий титр" Value="2" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="173" Title="HBs-Ag" Description="">
+      <Options>
+        <Option Id="1" Title="Отрицательный" Value="0" />
+        <Option Id="2" Title="Положительный" Value="1" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="174" Title="AntiHCV" Description="">
+      <Options>
+        <Option Id="1" Title="Отрицательный" Value="0" />
+        <Option Id="2" Title="Положительный" Value="1" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="175" Title="УЗИ органов брюшной полости - Правая доля" Description="">
+      <Options>
+        <Option Id="1" Title="Норма" Value="0" />
+        <Option Id="2" Title="Увеличена" Value="1" />
+        <Option Id="3" Title="Уменьшена" Value="2" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="176" Title="УЗИ органов брюшной полости - Левая доля" Description="">
+      <Options>
+        <Option Id="1" Title="Норма" Value="0" />
+        <Option Id="2" Title="Увеличена" Value="1" />
+        <Option Id="3" Title="Уменьшена" Value="2" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="177" Title="УЗИ органов брюшной полости - Эхогенность паренхимы" Description="">
+      <Options>
+        <Option Id="1" Title="Нормальная" Value="0" />
+        <Option Id="2" Title="Повышена" Value="1" />
+        <Option Id="3" Title="Понижена" Value="2" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="178" Title="УЗИ органов брюшной полости - Структура паренхимы" Description="">
+      <Options>
+        <Option Id="1" Title="Однородная" Value="0" />
+        <Option Id="2" Title="Неоднородная" Value="1" />
+        <Option Id="3" Title="Узлы" Value="2" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="179" Title="УЗИ органов брюшной полости - Внутрипеченочные протоки" Description="">
+      <Options>
+        <Option Id="1" Title="Не изменены" Value="0" />
+        <Option Id="2" Title="Расширены" Value="1" />
+        <Option Id="3" Title="Сужены" Value="2" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="180" Title="УЗИ органов брюшной полости - Портальная вена (диаметр)" Description="">
+      <Options>
+        <Option Id="1" Title="Норма" Value="0" />
+        <Option Id="2" Title="Расширена" Value="1" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="182" Title="УЗИ органов брюшной полости - Холедох (диаметр)" Description="">
+      <Options>
+        <Option Id="1" Title="Норма" Value="0" />
+        <Option Id="2" Title="Расширен" Value="1" />
+        <Option Id="3" Title="Сужен" Value="2" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="183" Title="Желчный пузырь - Содержимое" Description="">
+      <Options>
+        <Option Id="1" Title="Анэхогенное" Value="0" />
+        <Option Id="2" Title="Эхопозитивная взвесь" Value="1" />
+        <Option Id="3" Title="Конкременты" Value="2" />
+        <Option Id="4" Title="Пузырь удален" Value="3" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="184" Title="Желчный пузырь - Толщина стенки" Description="">
+      <Options>
+        <Option Id="1" Title="Норма" Value="0" />
+        <Option Id="2" Title="Утолщена" Value="1" />
+        <Option Id="3" Title="Пузырь удален" Value="2" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="185" Title="Поджелудочная железа - Эхогенность" Description="">
+      <Options>
+        <Option Id="1" Title="Нормальная" Value="0" />
+        <Option Id="2" Title="Повышена" Value="1" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="186" Title="Поджелудочная железа - Контур" Description="">
+      <Options>
+        <Option Id="1" Title="Четкий" Value="0" />
+        <Option Id="2" Title="Нечеткий" Value="1" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="187" Title="Поджелудочная железа - Вирсунгов проток" Description="">
+      <Options>
+        <Option Id="1" Title="Не расширен (не визуализируется)" Value="0" />
+        <Option Id="2" Title="Расширен" Value="1" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="188" Title="Селезенка - Размер" Description="">
+      <Options>
+        <Option Id="1" Title="Не увеличена" Value="0" />
+        <Option Id="2" Title="Увеличена" Value="1" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="189" Title="Пищевод - Состояние слизистой" Description="">
+      <Options>
+        <Option Id="1" Title="Норма" Value="0" />
+        <Option Id="2" Title="Гиперемия" Value="1" />
+        <Option Id="3" Title="Эрозии" Value="2" />
+        <Option Id="4" Title="Язвы" Value="3" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="190" Title="Пищевод - Пищеводный сфинктер" Description="">
+      <Options>
+        <Option Id="1" Title="Сомкнут" Value="0" />
+        <Option Id="2" Title="Зияет" Value="1" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="191" Title="Пищевод - Кардия" Description="">
+      <Options>
+        <Option Id="1" Title="Сомкнута" Value="0" />
+        <Option Id="2" Title="Зияет" Value="1" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="192" Title="Пищевод - Варикозно расширенные вены" Description="">
+      <Options>
+        <Option Id="0" Title="Да" Value="1" />
+        <Option Id="1" Title="Нет" Value="0" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="193" Title="Желудок - Слизистая" Description="">
+      <Options>
+        <Option Id="1" Title="Розовая" Value="0" />
+        <Option Id="2" Title="Гиперемия" Value="1" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="194" Title="Желудок - Атрофия слизистой" Description="">
+      <Options>
+        <Option Id="0" Title="Да" Value="1" />
+        <Option Id="1" Title="Нет" Value="0" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="195" Title="Желудок - Дефекты слизистой" Description="">
+      <Options>
+        <Option Id="1" Title="Нет" Value="0" />
+        <Option Id="2" Title="Эрозии" Value="1" />
+        <Option Id="3" Title="Язва" Value="2" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="196" Title="ДПК - Дефекты слизистой" Description="">
+      <Options>
+        <Option Id="1" Title="Нет" Value="0" />
+        <Option Id="2" Title="Эрозии" Value="1" />
+        <Option Id="3" Title="Язва" Value="2" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="197" Title="ДПК - Рубцовые изменения" Description="">
+      <Options>
+        <Option Id="1" Title="Нет" Value="0" />
+        <Option Id="2" Title="Рубец на слизистой" Value="1" />
+        <Option Id="3" Title="Рубцовая деформация" Value="2" />
+      </Options>
+    </SelectFormField>
+    <SelectFormField Id="204" IsOutput="true" Title="Гастрит" Description="">
+      <Options>
+        <Option Id="1" Title="Нет заболевания" Value="0" />
+        <Option Id="2" Title="Ремиссия/компенсация" Value="1" />
+        <Option Id="3" Title="Обострение легкой степени" Value="2" />
+        <Option Id="4" Title="Средней степени" Value="3" />
+        <Option Id="5" Title="Тяжелая степень" Value="4" />
+      </Options>
+    </SelectFormField>
+  </Fields>
+</FormTemplate>
