@@ -30,6 +30,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MDS.Common">
+      <HintPath>..\lib\MDS.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="MDS.FillForm.DomainModel">
+      <HintPath>..\lib\MDS.FillForm.DomainModel.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Bson">
+      <HintPath>..\lib\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver">
+      <HintPath>..\lib\MongoDB.Driver.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -39,6 +51,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CryptoHelpers.cs" />
+    <Compile Include="Models\DataProcessorConf.cs" />
+    <Compile Include="Models\FormHash.cs" />
     <Compile Include="np4load.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

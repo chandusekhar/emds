@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "emds.test", "emds.test\emds.test.csproj", "{D1D8BA46-0779-4757-9FEB-DAB72BCB5F82}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "emds.utility", "emds.test\emds.utility.csproj", "{D1D8BA46-0779-4757-9FEB-DAB72BCB5F82}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "emds.common", "emds.common\emds.common.csproj", "{75621124-1CBD-49C6-9A85-898A8DBF05FC}"
 EndProject
@@ -69,6 +69,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Отдаленное сел
 		NeuralNetworks\Cardiology\Отдаленное село\инфаркт_миокарда.xml = NeuralNetworks\Cardiology\Отдаленное село\инфаркт_миокарда.xml
 		NeuralNetworks\Cardiology\Отдаленное село\хсн.np4 = NeuralNetworks\Cardiology\Отдаленное село\хсн.np4
 		NeuralNetworks\Cardiology\Отдаленное село\хсн.xml = NeuralNetworks\Cardiology\Отдаленное село\хсн.xml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{0C5B69D6-E3B6-4C71-AF10-909FFC5C8D4B}"
+	ProjectSection(SolutionItems) = preProject
+		lib\MDS.Common.dll = lib\MDS.Common.dll
+		lib\MDS.Common.pdb = lib\MDS.Common.pdb
+		lib\MDS.FillForm.DomainModel.dll = lib\MDS.FillForm.DomainModel.dll
+		lib\MDS.FillForm.DomainModel.pdb = lib\MDS.FillForm.DomainModel.pdb
+		lib\MongoDB.Bson.dll = lib\MongoDB.Bson.dll
+		lib\MongoDB.Bson.pdb = lib\MongoDB.Bson.pdb
+		lib\MongoDB.Bson.xml = lib\MongoDB.Bson.xml
+		lib\MongoDB.Driver.dll = lib\MongoDB.Driver.dll
+		lib\MongoDB.Driver.pdb = lib\MongoDB.Driver.pdb
+		lib\MongoDB.Driver.XML = lib\MongoDB.Driver.XML
+		lib\Nsim4.exe = lib\Nsim4.exe
 	EndProjectSection
 EndProject
 Global
