@@ -12,9 +12,13 @@ namespace emds.common.Models
 {
     public class FormHash
     {
+        [BsonId]
+        public ObjectId Id { get; set; }
         [BsonElement("Hash")]
         public string Hash { get; set; }
         [BsonElement("GID")]
         public Guid GID { get; set; }
+        [BsonElement("Data")]
+        public double[] Data { get; set; }
     }
 }

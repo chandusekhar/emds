@@ -1,15 +1,28 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "emds.utility", "emds.test\emds.utility.csproj", "{D1D8BA46-0779-4757-9FEB-DAB72BCB5F82}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "encog-core-cs", "encog-core-cs\encog-core-cs.csproj", "{AC6FADF9-0904-4EBD-B22C-1C787C7E7A95}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "emds.common", "emds.common\emds.common.csproj", "{75621124-1CBD-49C6-9A85-898A8DBF05FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "encog-core-cs", "encog-core-cs\encog-core-cs.csproj", "{AC6FADF9-0904-4EBD-B22C-1C787C7E7A95}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "emds.utility", "emds.test\emds.utility.csproj", "{D1D8BA46-0779-4757-9FEB-DAB72BCB5F82}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NeuralNetworks", "NeuralNetworks", "{6577B9A4-CFB1-4BA2-92D4-88A3332784E1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "emds.NsimMediator", "NsimMediator\emds.NsimMediator.csproj", "{A2F106E7-8103-40BE-B15C-0B29E9BCE3BD}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cardiology", "Cardiology", "{9D92852D-049E-43A7-9566-CBC2A37F3789}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nsim4", "Nsim4\Nsim4.csproj", "{C1002ADD-334B-43C9-9DF6-3AE09ADCBA6A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{98484F99-5BC7-49C3-A761-35A02D3B7EB9}"
+	ProjectSection(SolutionItems) = preProject
+		lib\MDS.Common.dll = lib\MDS.Common.dll
+		lib\MDS.Common.pdb = lib\MDS.Common.pdb
+		lib\MDS.FillForm.DomainModel.dll = lib\MDS.FillForm.DomainModel.dll
+		lib\MDS.FillForm.DomainModel.pdb = lib\MDS.FillForm.DomainModel.pdb
+		lib\Nsim4.exe = lib\Nsim4.exe
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NeuralNetworks", "NeuralNetworks", "{14C6FF4A-9D14-48BF-864F-65661BD03DDB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cardiology", "Cardiology", "{EF163E9A-2F0F-427A-B577-F608E798F703}"
 	ProjectSection(SolutionItems) = preProject
 		NeuralNetworks\Cardiology\аритмии_и_блокады_сердца.np4 = NeuralNetworks\Cardiology\аритмии_и_блокады_сердца.np4
 		NeuralNetworks\Cardiology\аритмии_и_блокады_сердца.xml = NeuralNetworks\Cardiology\аритмии_и_блокады_сердца.xml
@@ -23,7 +36,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cardiology", "Cardiology", 
 		NeuralNetworks\Cardiology\хсн.xml = NeuralNetworks\Cardiology\хсн.xml
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Endocrinology", "Endocrinology", "{018EB813-EFD1-4583-A1D3-C96916469EA7}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Отдаленное село", "Отдаленное село", "{D51BB73B-0E8D-488B-9E84-DC31814BE11B}"
+	ProjectSection(SolutionItems) = preProject
+		NeuralNetworks\Cardiology\Отдаленное село\аритмии_и_блокады_сердца.np4 = NeuralNetworks\Cardiology\Отдаленное село\аритмии_и_блокады_сердца.np4
+		NeuralNetworks\Cardiology\Отдаленное село\аритмии_и_блокады_сердца.xml = NeuralNetworks\Cardiology\Отдаленное село\аритмии_и_блокады_сердца.xml
+		NeuralNetworks\Cardiology\Отдаленное село\гипертоническая_болезнь.np4 = NeuralNetworks\Cardiology\Отдаленное село\гипертоническая_болезнь.np4
+		NeuralNetworks\Cardiology\Отдаленное село\гипертоническая_болезнь.xml = NeuralNetworks\Cardiology\Отдаленное село\гипертоническая_болезнь.xml
+		NeuralNetworks\Cardiology\Отдаленное село\ибс.np4 = NeuralNetworks\Cardiology\Отдаленное село\ибс.np4
+		NeuralNetworks\Cardiology\Отдаленное село\ибс.xml = NeuralNetworks\Cardiology\Отдаленное село\ибс.xml
+		NeuralNetworks\Cardiology\Отдаленное село\инфаркт_миокарда.np4 = NeuralNetworks\Cardiology\Отдаленное село\инфаркт_миокарда.np4
+		NeuralNetworks\Cardiology\Отдаленное село\инфаркт_миокарда.xml = NeuralNetworks\Cardiology\Отдаленное село\инфаркт_миокарда.xml
+		NeuralNetworks\Cardiology\Отдаленное село\хсн.np4 = NeuralNetworks\Cardiology\Отдаленное село\хсн.np4
+		NeuralNetworks\Cardiology\Отдаленное село\хсн.xml = NeuralNetworks\Cardiology\Отдаленное село\хсн.xml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Endocrinology", "Endocrinology", "{6F99E752-CE2B-48A7-8CEE-11B1BEF2A053}"
 	ProjectSection(SolutionItems) = preProject
 		NeuralNetworks\Endocrinology\гипергликемия.np4 = NeuralNetworks\Endocrinology\гипергликемия.np4
 		NeuralNetworks\Endocrinology\гипергликемия.xml = NeuralNetworks\Endocrinology\гипергликемия.xml
@@ -43,7 +70,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Endocrinology", "Endocrinol
 		NeuralNetworks\Endocrinology\сахарный_диабет_2тип.xml = NeuralNetworks\Endocrinology\сахарный_диабет_2тип.xml
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gastroenterology", "Gastroenterology", "{E5C9AC49-84E4-4D6F-A6ED-8504DCFADEAF}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gastroenterology", "Gastroenterology", "{C4A71CF8-A2F9-4F3D-AF90-05DBD1F8E3FE}"
 	ProjectSection(SolutionItems) = preProject
 		NeuralNetworks\Gastroenterology\гастрит.np4 = NeuralNetworks\Gastroenterology\гастрит.np4
 		NeuralNetworks\Gastroenterology\гастрит.xml = NeuralNetworks\Gastroenterology\гастрит.xml
@@ -57,61 +84,110 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gastroenterology", "Gastroe
 		NeuralNetworks\Gastroenterology\язвенная_болезнь.xml = NeuralNetworks\Gastroenterology\язвенная_болезнь.xml
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Отдаленное село", "Отдаленное село", "{B58AC43B-B647-4310-97DE-9B7B96D478E5}"
-	ProjectSection(SolutionItems) = preProject
-		NeuralNetworks\Cardiology\Отдаленное село\аритмии_и_блокады_сердца.np4 = NeuralNetworks\Cardiology\Отдаленное село\аритмии_и_блокады_сердца.np4
-		NeuralNetworks\Cardiology\Отдаленное село\аритмии_и_блокады_сердца.xml = NeuralNetworks\Cardiology\Отдаленное село\аритмии_и_блокады_сердца.xml
-		NeuralNetworks\Cardiology\Отдаленное село\гипертоническая_болезнь.np4 = NeuralNetworks\Cardiology\Отдаленное село\гипертоническая_болезнь.np4
-		NeuralNetworks\Cardiology\Отдаленное село\гипертоническая_болезнь.xml = NeuralNetworks\Cardiology\Отдаленное село\гипертоническая_болезнь.xml
-		NeuralNetworks\Cardiology\Отдаленное село\ибс.np4 = NeuralNetworks\Cardiology\Отдаленное село\ибс.np4
-		NeuralNetworks\Cardiology\Отдаленное село\ибс.xml = NeuralNetworks\Cardiology\Отдаленное село\ибс.xml
-		NeuralNetworks\Cardiology\Отдаленное село\инфаркт_миокарда.np4 = NeuralNetworks\Cardiology\Отдаленное село\инфаркт_миокарда.np4
-		NeuralNetworks\Cardiology\Отдаленное село\инфаркт_миокарда.xml = NeuralNetworks\Cardiology\Отдаленное село\инфаркт_миокарда.xml
-		NeuralNetworks\Cardiology\Отдаленное село\хсн.np4 = NeuralNetworks\Cardiology\Отдаленное село\хсн.np4
-		NeuralNetworks\Cardiology\Отдаленное село\хсн.xml = NeuralNetworks\Cardiology\Отдаленное село\хсн.xml
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nsim4test", "Nsim4test\Nsim4test.csproj", "{19E511A2-AC5A-46FA-A1FD-69EC86301AA9}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{0C5B69D6-E3B6-4C71-AF10-909FFC5C8D4B}"
-	ProjectSection(SolutionItems) = preProject
-		lib\MDS.Common.dll = lib\MDS.Common.dll
-		lib\MDS.Common.pdb = lib\MDS.Common.pdb
-		lib\MDS.FillForm.DomainModel.dll = lib\MDS.FillForm.DomainModel.dll
-		lib\MDS.FillForm.DomainModel.pdb = lib\MDS.FillForm.DomainModel.pdb
-		lib\MongoDB.Bson.dll = lib\MongoDB.Bson.dll
-		lib\MongoDB.Bson.pdb = lib\MongoDB.Bson.pdb
-		lib\MongoDB.Bson.xml = lib\MongoDB.Bson.xml
-		lib\MongoDB.Driver.dll = lib\MongoDB.Driver.dll
-		lib\MongoDB.Driver.pdb = lib\MongoDB.Driver.pdb
-		lib\MongoDB.Driver.XML = lib\MongoDB.Driver.XML
-		lib\Nsim4.exe = lib\Nsim4.exe
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "emds.TrainLogger", "emds.TrainLogger\emds.TrainLogger.csproj", "{414DB410-1B9E-4A44-A054-3D9CD2753CEA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "emds.ViewTrainLog", "emds.ViewTrainLog\emds.ViewTrainLog.csproj", "{FE27F43B-2283-4391-9980-E315C76A7EBE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D1D8BA46-0779-4757-9FEB-DAB72BCB5F82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D1D8BA46-0779-4757-9FEB-DAB72BCB5F82}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D1D8BA46-0779-4757-9FEB-DAB72BCB5F82}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D1D8BA46-0779-4757-9FEB-DAB72BCB5F82}.Release|Any CPU.Build.0 = Release|Any CPU
-		{75621124-1CBD-49C6-9A85-898A8DBF05FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{75621124-1CBD-49C6-9A85-898A8DBF05FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{75621124-1CBD-49C6-9A85-898A8DBF05FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{75621124-1CBD-49C6-9A85-898A8DBF05FC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AC6FADF9-0904-4EBD-B22C-1C787C7E7A95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AC6FADF9-0904-4EBD-B22C-1C787C7E7A95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC6FADF9-0904-4EBD-B22C-1C787C7E7A95}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{AC6FADF9-0904-4EBD-B22C-1C787C7E7A95}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{AC6FADF9-0904-4EBD-B22C-1C787C7E7A95}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{AC6FADF9-0904-4EBD-B22C-1C787C7E7A95}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC6FADF9-0904-4EBD-B22C-1C787C7E7A95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC6FADF9-0904-4EBD-B22C-1C787C7E7A95}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{AC6FADF9-0904-4EBD-B22C-1C787C7E7A95}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{AC6FADF9-0904-4EBD-B22C-1C787C7E7A95}.Release|x86.ActiveCfg = Release|Any CPU
+		{75621124-1CBD-49C6-9A85-898A8DBF05FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75621124-1CBD-49C6-9A85-898A8DBF05FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75621124-1CBD-49C6-9A85-898A8DBF05FC}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{75621124-1CBD-49C6-9A85-898A8DBF05FC}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{75621124-1CBD-49C6-9A85-898A8DBF05FC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{75621124-1CBD-49C6-9A85-898A8DBF05FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75621124-1CBD-49C6-9A85-898A8DBF05FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75621124-1CBD-49C6-9A85-898A8DBF05FC}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{75621124-1CBD-49C6-9A85-898A8DBF05FC}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{75621124-1CBD-49C6-9A85-898A8DBF05FC}.Release|x86.ActiveCfg = Release|Any CPU
+		{D1D8BA46-0779-4757-9FEB-DAB72BCB5F82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1D8BA46-0779-4757-9FEB-DAB72BCB5F82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1D8BA46-0779-4757-9FEB-DAB72BCB5F82}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{D1D8BA46-0779-4757-9FEB-DAB72BCB5F82}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{D1D8BA46-0779-4757-9FEB-DAB72BCB5F82}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D1D8BA46-0779-4757-9FEB-DAB72BCB5F82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1D8BA46-0779-4757-9FEB-DAB72BCB5F82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1D8BA46-0779-4757-9FEB-DAB72BCB5F82}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{D1D8BA46-0779-4757-9FEB-DAB72BCB5F82}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{D1D8BA46-0779-4757-9FEB-DAB72BCB5F82}.Release|x86.ActiveCfg = Release|Any CPU
+		{A2F106E7-8103-40BE-B15C-0B29E9BCE3BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2F106E7-8103-40BE-B15C-0B29E9BCE3BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2F106E7-8103-40BE-B15C-0B29E9BCE3BD}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{A2F106E7-8103-40BE-B15C-0B29E9BCE3BD}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{A2F106E7-8103-40BE-B15C-0B29E9BCE3BD}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A2F106E7-8103-40BE-B15C-0B29E9BCE3BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2F106E7-8103-40BE-B15C-0B29E9BCE3BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2F106E7-8103-40BE-B15C-0B29E9BCE3BD}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{A2F106E7-8103-40BE-B15C-0B29E9BCE3BD}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{A2F106E7-8103-40BE-B15C-0B29E9BCE3BD}.Release|x86.ActiveCfg = Release|Any CPU
+		{C1002ADD-334B-43C9-9DF6-3AE09ADCBA6A}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{C1002ADD-334B-43C9-9DF6-3AE09ADCBA6A}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{C1002ADD-334B-43C9-9DF6-3AE09ADCBA6A}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{C1002ADD-334B-43C9-9DF6-3AE09ADCBA6A}.Debug|x86.ActiveCfg = Debug|x86
+		{C1002ADD-334B-43C9-9DF6-3AE09ADCBA6A}.Debug|x86.Build.0 = Debug|x86
+		{C1002ADD-334B-43C9-9DF6-3AE09ADCBA6A}.Release|Any CPU.ActiveCfg = Release|x86
+		{C1002ADD-334B-43C9-9DF6-3AE09ADCBA6A}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{C1002ADD-334B-43C9-9DF6-3AE09ADCBA6A}.Release|Mixed Platforms.Build.0 = Release|x86
+		{C1002ADD-334B-43C9-9DF6-3AE09ADCBA6A}.Release|x86.ActiveCfg = Release|x86
+		{C1002ADD-334B-43C9-9DF6-3AE09ADCBA6A}.Release|x86.Build.0 = Release|x86
+		{19E511A2-AC5A-46FA-A1FD-69EC86301AA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19E511A2-AC5A-46FA-A1FD-69EC86301AA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19E511A2-AC5A-46FA-A1FD-69EC86301AA9}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{19E511A2-AC5A-46FA-A1FD-69EC86301AA9}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{19E511A2-AC5A-46FA-A1FD-69EC86301AA9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{19E511A2-AC5A-46FA-A1FD-69EC86301AA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19E511A2-AC5A-46FA-A1FD-69EC86301AA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19E511A2-AC5A-46FA-A1FD-69EC86301AA9}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{19E511A2-AC5A-46FA-A1FD-69EC86301AA9}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{19E511A2-AC5A-46FA-A1FD-69EC86301AA9}.Release|x86.ActiveCfg = Release|Any CPU
+		{414DB410-1B9E-4A44-A054-3D9CD2753CEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{414DB410-1B9E-4A44-A054-3D9CD2753CEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{414DB410-1B9E-4A44-A054-3D9CD2753CEA}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{414DB410-1B9E-4A44-A054-3D9CD2753CEA}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{414DB410-1B9E-4A44-A054-3D9CD2753CEA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{414DB410-1B9E-4A44-A054-3D9CD2753CEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{414DB410-1B9E-4A44-A054-3D9CD2753CEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{414DB410-1B9E-4A44-A054-3D9CD2753CEA}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{414DB410-1B9E-4A44-A054-3D9CD2753CEA}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{414DB410-1B9E-4A44-A054-3D9CD2753CEA}.Release|x86.ActiveCfg = Release|Any CPU
+		{FE27F43B-2283-4391-9980-E315C76A7EBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE27F43B-2283-4391-9980-E315C76A7EBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE27F43B-2283-4391-9980-E315C76A7EBE}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{FE27F43B-2283-4391-9980-E315C76A7EBE}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{FE27F43B-2283-4391-9980-E315C76A7EBE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{FE27F43B-2283-4391-9980-E315C76A7EBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE27F43B-2283-4391-9980-E315C76A7EBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE27F43B-2283-4391-9980-E315C76A7EBE}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{FE27F43B-2283-4391-9980-E315C76A7EBE}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{FE27F43B-2283-4391-9980-E315C76A7EBE}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{9D92852D-049E-43A7-9566-CBC2A37F3789} = {6577B9A4-CFB1-4BA2-92D4-88A3332784E1}
-		{018EB813-EFD1-4583-A1D3-C96916469EA7} = {6577B9A4-CFB1-4BA2-92D4-88A3332784E1}
-		{E5C9AC49-84E4-4D6F-A6ED-8504DCFADEAF} = {6577B9A4-CFB1-4BA2-92D4-88A3332784E1}
-		{B58AC43B-B647-4310-97DE-9B7B96D478E5} = {9D92852D-049E-43A7-9566-CBC2A37F3789}
+		{EF163E9A-2F0F-427A-B577-F608E798F703} = {14C6FF4A-9D14-48BF-864F-65661BD03DDB}
+		{6F99E752-CE2B-48A7-8CEE-11B1BEF2A053} = {14C6FF4A-9D14-48BF-864F-65661BD03DDB}
+		{C4A71CF8-A2F9-4F3D-AF90-05DBD1F8E3FE} = {14C6FF4A-9D14-48BF-864F-65661BD03DDB}
+		{D51BB73B-0E8D-488B-9E84-DC31814BE11B} = {EF163E9A-2F0F-427A-B577-F608E798F703}
 	EndGlobalSection
 EndGlobal

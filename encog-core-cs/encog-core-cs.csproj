@@ -734,7 +734,12 @@
   <ItemGroup>
     <None Include="Encog.snk" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\emds.TrainLogger\emds.TrainLogger.csproj">
+      <Project>{414db410-1b9e-4a44-a054-3d9cd2753cea}</Project>
+      <Name>emds.TrainLogger</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>

@@ -33,6 +33,9 @@ using Encog.Util.Logging;
 using Encog.Neural.Error;
 using Encog.Util.Concurrency;
 
+using System.Collections.Generic;
+using System.Diagnostics;
+
 namespace Encog.Neural.Networks.Training.Propagation
 {
     /// <summary>
@@ -180,6 +183,8 @@ namespace Encog.Neural.Networks.Training.Propagation
             get { return _network; }
         }
 
+        //my!
+        Dictionary<string, Object> record;
         /// <summary>
         /// Perform the specified number of training iterations. This can be more
         /// efficient than single training iterations. This is particularly true if
@@ -189,11 +194,26 @@ namespace Encog.Neural.Networks.Training.Propagation
         {
             try
             {
+                //my!
+                record = new Dictionary<string, Object>();
+                record.Add("event", "iteration");
+                //record.Add("iteration", _iteration);
+                record.Add("weightBefore", _network.Flat.Weights);
+                //
+                
                 PreIteration();
 
                 RollIteration();
 
+                var tl = emds.TrainLogger.GetTrainLogger();
+                tl.AgeNumber = _iteration;
+
                 CalculateGradients();
+
+                //my!
+                record.Add("gradient", EngineArray.ArrayCopy(Gradients));
+                record.Add("CurrentError", CurrentError);
+                //
 
                 if (_flat.Limited)
                 {
@@ -202,6 +222,8 @@ namespace Encog.Neural.Networks.Training.Propagation
                 else
                 {
                     Learn();
+                    //в этом методе заполняется ещё 1 градиент и после него можно записывать в БД
+                    tl.WriteEvent(record);
                 }
 
 
@@ -305,8 +327,14 @@ namespace Encog.Neural.Networks.Training.Propagation
 
             _totalError = 0;
 
-            Parallel.ForEach(_workers, worker => worker.Run());
-            
+            //my
+            //Stopwatch stopwatch = new Stopwatch();
+            //stopwatch.Start();
+            foreach (var worker in _workers)
+                worker.Run();
+            //Parallel.ForEach(_workers, worker => worker.Run());
+            //stopwatch.Stop();
+            //Console.WriteLine("Sequential loop time in milliseconds: {0}", stopwatch.ElapsedMilliseconds);
 
             CurrentError = _totalError / _workers.Length;
         }
@@ -385,11 +413,16 @@ namespace Encog.Neural.Networks.Training.Propagation
         protected internal void Learn()
         {
             double[] weights = _flat.Weights;
+            double[] gr = new double[weights.Length];
             for (int i = 0; i < Gradients.Length; i++)
             {
-                weights[i] += UpdateWeight(Gradients, _lastGradient, i);
+                //my!
+                gr[i] = UpdateWeight(Gradients, _lastGradient, i);
+                weights[i] += gr[i];
                 Gradients[i] = 0;
             }
+            record.Add("newWeights", weights);
+            record.Add("gradientR", gr);
         }
 
         /// <summary>

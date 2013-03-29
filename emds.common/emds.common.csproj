@@ -37,10 +37,10 @@
       <HintPath>..\lib\MDS.FillForm.DomainModel.dll</HintPath>
     </Reference>
     <Reference Include="MongoDB.Bson">
-      <HintPath>..\lib\MongoDB.Bson.dll</HintPath>
+      <HintPath>..\packages\mongocsharpdriver.1.8.0\lib\net35\MongoDB.Bson.dll</HintPath>
     </Reference>
     <Reference Include="MongoDB.Driver">
-      <HintPath>..\lib\MongoDB.Driver.dll</HintPath>
+      <HintPath>..\packages\mongocsharpdriver.1.8.0\lib\net35\MongoDB.Driver.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -52,16 +52,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CryptoHelpers.cs" />
+    <Compile Include="FileLogger.cs" />
     <Compile Include="Models\DataProcessorConf.cs" />
+    <Compile Include="Models\DataRow.cs" />
     <Compile Include="Models\FormHash.cs" />
+    <Compile Include="Models\TrainingStopParams.cs" />
     <Compile Include="np4load.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SearchHashForm.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\encog-core-cs\encog-core-cs.csproj">
       <Project>{ac6fadf9-0904-4ebd-b22c-1c787c7e7a95}</Project>
       <Name>encog-core-cs</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

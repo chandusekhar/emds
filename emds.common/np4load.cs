@@ -46,25 +46,28 @@ namespace emds.common
             net.AddLayer(
                 new BasicLayer(
                     GetActivationFunction(inputL.Element("ActivationFunction").Attribute("Type").Value.Trim()),
-                    false,
+                    true,
                     int.Parse(inputL.Attribute("Size").Value)));
-
-            var outputL = netStr.First(x => x.Attribute("Name") != null && x.Attribute("Name").Value == "Output");
-
+            
             XElement hiddenL = netStr.First(x => x.Name == "HiddenLayers");
             foreach (var layer in hiddenL.Elements("Layer"))
             {
                 net.AddLayer(new BasicLayer(
                     GetActivationFunction(layer.Element("ActivationFunction").Attribute("Type").Value.Trim()),
-                    false,
+                    true,
                     int.Parse(layer.Attribute("Size").Value)));
             }
 
+            var outputL = netStr.First(x => x.Attribute("Name") != null && x.Attribute("Name").Value == "Output");
             net.AddLayer(
                 new BasicLayer(
                     GetActivationFunction(outputL.Element("ActivationFunction").Attribute("Type").Value.Trim()),
-                    false,
+                    true,
                     int.Parse(outputL.Attribute("Size").Value)));
+
+            net.Structure.FinalizeStructure();
+            //Задание случайных весов?
+            net.Reset();
 
             return net;
         }
@@ -113,6 +116,10 @@ namespace emds.common
             idealData = idealSet;
         }
 
+        /// <summary>
+        /// Данные для обучения. Обрабатываются с применнеием TPL
+        /// </summary>
+        /// <returns></returns>
         public IMLDataSet GetTrainingData()
         {
             double[][] trainingSet;
@@ -123,10 +130,10 @@ namespace emds.common
         }
 
         /// <summary>
-        /// Последовательное получение данных из xml
+        /// Последовательное получение данных из xml без TPL
         /// </summary>
         /// <returns></returns>
-        public IMLDataSet GetTrainingData2()
+        public IMLDataSet GetTrainingDataNotParallel()
         {
             int size = int.Parse(xmlNeuroNet.Element("NetStruct")
                 .Descendants("Layer")
@@ -164,22 +171,75 @@ namespace emds.common
             return new BasicMLDataSet(trainingSet, idealSet);
         }
 
-        public IMLTrain GetTrainMetod()
+        public string GetNameTrainMetod()
+        {
+            XElement trainMetod = xmlNeuroNet.Element("TrainerConfig");
+            return trainMetod.Attribute("Type").Value;
+        }
+
+        public IMLTrain GetTrainMetod(out BasicNetwork net, out IMLDataSet data)
         {
             XElement trainMetod = xmlNeuroNet.Element("TrainerConfig");
             switch (trainMetod.Attribute("Type").Value)
             {
                 case "ResilientPropagation":
                     {
-                        return new ResilientPropagation(GetNeuralNetwork(), GetTrainingData());
+                        net = GetNeuralNetwork();
+                        data = GetTrainingData();
+                        return new ResilientPropagation(net, data);
                     }
-                default: return null;
+                default:
+                    {
+                        net = null;
+                        data = null;
+                        return null;
+                    }
             }
         }
 
         public DataProcessorConf GetDataProcessor()
         {
-            return null;
+            XElement dataProcessor = xmlNeuroNet.Element("DataProcessor")
+                .Elements().Skip(1).First();
+            DataProcessorConf res = new DataProcessorConf()
+            {
+                IsUsed = bool.Parse(dataProcessor.Attribute("IsUsed").Value),
+                A = int.Parse(dataProcessor.Attribute("A").Value),
+                B = int.Parse(dataProcessor.Attribute("B").Value),
+                Type = dataProcessor.Attribute("Type").Value
+            };
+            var inArr = dataProcessor.Elements("InC").ToArray();
+            int sizeIn = inArr.Count();
+            res.InCC = new double[sizeIn];
+            res.InCD = new double[sizeIn];
+            
+            //System.Globalization.NumberFormatInfo.
+
+            for (int i = 0; i < sizeIn; i++)
+            {
+                res.InCC[i] = double.Parse(inArr[i].Attribute("C").Value.Replace('.', ','));
+                res.InCD[i] = double.Parse(inArr[i].Attribute("D").Value.Replace('.', ','));
+            }
+
+            var outArr = dataProcessor.Elements("OutC").ToArray();
+            int sizeOut = outArr.Count();
+            res.OutCC = new double[sizeOut];
+            res.OutCD = new double[sizeOut];
+
+            for (int i = 0; i < sizeOut; i++)
+            {
+                res.OutCC[i] = double.Parse(outArr[i].Attribute("C").Value.Replace('.', ','));
+                res.OutCD[i] = double.Parse(outArr[i].Attribute("D").Value.Replace('.', ','));
+            }
+
+            return res;
+        }
+
+        public TrainingStopParams GetTrainingStopParams()
+        {
+            XElement tsp = xmlNeuroNet.Element("TrainingStopParams");
+            TrainingStopParams res = TrainingStopParams.GetTraningStopParams(tsp);
+            return res;
         }
 
         private IActivationFunction GetActivationFunction(string funName)

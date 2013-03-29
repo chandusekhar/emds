@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<NeuroProject>
+  <NetStruct Name="NetStruct">
+    <Layer Size="1" Name="Input">
+      <ActivationFunction Type="ActivationTANH" />
+    </Layer>
+    <HiddenLayers>
+      <ActivationFunction Type="ActivationTANH" />
+    </HiddenLayers>
+    <Layer Size="1" Name="Output">
+      <ActivationFunction Type="ActivationTANH" />
+    </Layer>
+  </NetStruct>
+  <TrainerConfig Type="ResilientPropagation" Name="TrainerConfig" />
+  <RandomConfig Type="AutoRandomDecorator" Name="RandomConfig" />
+  <DataProcessor Type="BatchDataProcessor" Name="DataProcessor">
+    <DataProcessor Type="SimpleFunctionalPreprocessorLogic" IsUsed="false" CorrelationSelectMode="Mean" />
+    <DataProcessor Type="LinearScale" IsUsed="true" A="-1" B="1" />
+  </DataProcessor>
+  <TrainingStopParams UseIterations="true" Iterations="1000" UseTeachError="false" TeachError="0.01" UseTestError="false" TestError="0.01" Name="TrainingStopParams" />
+  <DataSet Name="TrainData" />
+  <DataSet Name="TestData" />
+  <DataSet Name="CheckData" />
+  <DataSet Name="CalcData" />
+  <ErrorGraphData Name="ErrorGraphData" />
+  <TrainStatus TotalIterations="0" Name="NetData">
+    <Array Name="Weigths">
+      <Data Index="0" Value="0.68437038347328571" />
+      <Data Index="1" Value="-0.76775210898730539" />
+    </Array>
+  </TrainStatus>
+</NeuroProject>

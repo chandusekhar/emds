@@ -129,7 +129,9 @@ namespace Encog.ML.Train
         {
             for (int i = 0; i < count; i++)
             {
+                emds.TrainLogger.GetTrainLogger().AgeNumber = i;
                 Iteration();
+                System.Console.WriteLine("Итерация: " + i);
             }
         }
 

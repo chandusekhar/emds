@@ -571,6 +571,8 @@ namespace Encog.Neural.Flat
         /// <param name="output">Output will be placed here.</param>
         public virtual void Compute(double[] input, double[] output)
         {
+            emds.TrainLogger tl = emds.TrainLogger.GetTrainLogger();
+
             int sourceIndex = _layerOutput.Length
                               - _layerCounts[_layerCounts.Length - 1];
 
@@ -589,6 +591,9 @@ namespace Encog.Neural.Flat
             {
                 _layerOutput[offset + x] = _layerOutput[x];
             }
+
+            tl.LogRecord.Add("layerOutput", _layerOutput);
+            tl.LogRecord.Add("layersums", _layerSums);
 
             EngineArray.ArrayCopy(_layerOutput, 0, output, 0, _outputCount);
         }

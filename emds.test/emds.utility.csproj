@@ -35,17 +35,17 @@
     <Reference Include="MDS.Common">
       <HintPath>..\lib\MDS.Common.dll</HintPath>
     </Reference>
-    <Reference Include="MDS.FillForm.DomainModel">
+    <Reference Include="MDS.FillForm.DomainModel, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\lib\MDS.FillForm.DomainModel.dll</HintPath>
     </Reference>
-    <Reference Include="MongoDB.Bson">
-      <HintPath>..\lib\MongoDB.Bson.dll</HintPath>
+    <Reference Include="MongoDB.Bson, Version=1.8.0.124, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\mongocsharpdriver.1.8.0\lib\net35\MongoDB.Bson.dll</HintPath>
     </Reference>
-    <Reference Include="MongoDB.Driver">
-      <HintPath>..\lib\MongoDB.Driver.dll</HintPath>
-    </Reference>
-    <Reference Include="Nsim4">
-      <HintPath>..\lib\Nsim4.exe</HintPath>
+    <Reference Include="MongoDB.Driver, Version=1.8.0.124, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\mongocsharpdriver.1.8.0\lib\net35\MongoDB.Driver.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -62,15 +62,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\emds.common\emds.common.csproj">
       <Project>{75621124-1cbd-49c6-9a85-898a8dbf05fc}</Project>
       <Name>emds.common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\emds.TrainLogger\emds.TrainLogger.csproj">
+      <Project>{414db410-1b9e-4a44-a054-3d9cd2753cea}</Project>
+      <Name>emds.TrainLogger</Name>
+    </ProjectReference>
     <ProjectReference Include="..\encog-core-cs\encog-core-cs.csproj">
       <Project>{ac6fadf9-0904-4ebd-b22c-1c787c7e7a95}</Project>
       <Name>encog-core-cs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NsimMediator\emds.NsimMediator.csproj">
+      <Project>{a2f106e7-8103-40be-b15c-0b29e9bce3bd}</Project>
+      <Name>emds.NsimMediator</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

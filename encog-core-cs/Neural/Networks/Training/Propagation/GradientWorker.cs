@@ -30,6 +30,8 @@ using Encog.Neural.Flat;
 using Encog.Util;
 using Encog.Util.Concurrency;
 
+using System.Collections.Generic;
+
 namespace Encog.Neural.Networks.Training.Propagation
 {
     /// <summary>
@@ -205,6 +207,8 @@ namespace Encog.Neural.Networks.Training.Propagation
             get { return _weights; }
         }
 
+        //my!
+        Dictionary<string, Object> record;
         /// <summary>
         /// Perform the gradient calculation for the specified index range.
         /// </summary>
@@ -213,11 +217,21 @@ namespace Encog.Neural.Networks.Training.Propagation
         {
             try
             {
+                emds.TrainLogger tl = emds.TrainLogger.GetTrainLogger();
                 _errorCalculation.Reset();
                 for (int i = _low; i <= _high; i++)
                 {
                     _training.GetRecord(i, _pair);
+
+                    //my!
+                    record = new Dictionary<string, object>();
+                    record.Add("event", "ProcessPair");
+                    record.Add("Pair", i);
+                    tl.LogRecord = record;
+                    
                     Process(_pair.InputArray, _pair.IdealArray, _pair.Significance);
+
+                    tl.WriteEvent(record);
                 }
                 double error = _errorCalculation.Calculate();
                 _owner.Report(_gradients, error, null);
@@ -245,6 +259,8 @@ namespace Encog.Neural.Networks.Training.Propagation
             _errorCalculation.UpdateError(_actual, ideal, s);
             _ef.CalculateError(ideal,_actual,_layerDelta);
 
+            record.Add("error", _layerDelta);
+
             for (int i = 0; i < _actual.Length; i++)
             {
                 _layerDelta[i] = (_network.ActivationFunctions[0]
@@ -256,6 +272,8 @@ namespace Encog.Neural.Networks.Training.Propagation
             {
                 ProcessLevel(i);
             }
+            record.Add("PairLayerDelta", _layerDelta);
+            record.Add("PairGradient", _gradients);
         }
 
         /// <summary>
@@ -274,7 +292,7 @@ namespace Encog.Neural.Networks.Training.Propagation
             IActivationFunction activation = _network.ActivationFunctions[currentLevel + 1];
             double currentFlatSpot = _flatSpot[currentLevel + 1];
 
-            // handle weights
+            // handle we ights
             int yi = fromLayerIndex;
             for (int y = 0; y < fromLayerSize; y++)
             {
