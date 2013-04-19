@@ -69,9 +69,9 @@
       <Project>{75621124-1cbd-49c6-9a85-898a8dbf05fc}</Project>
       <Name>emds.common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\emds.TrainLogger\emds.TrainLogger.csproj">
+    <ProjectReference Include="..\emds.TrainLogger\emds.TrainLoggers.csproj">
       <Project>{414db410-1b9e-4a44-a054-3d9cd2753cea}</Project>
-      <Name>emds.TrainLogger</Name>
+      <Name>emds.TrainLoggers</Name>
     </ProjectReference>
     <ProjectReference Include="..\encog-core-cs\encog-core-cs.csproj">
       <Project>{ac6fadf9-0904-4ebd-b22c-1c787c7e7a95}</Project>

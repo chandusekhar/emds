@@ -36,7 +36,7 @@ namespace emds.common
         {
             xmlNeuroNet = XElement.Load(path);
         }
-
+        
         public BasicNetwork GetNeuralNetwork()
         {
             BasicNetwork net = new BasicNetwork();
@@ -239,6 +239,20 @@ namespace emds.common
         {
             XElement tsp = xmlNeuroNet.Element("TrainingStopParams");
             TrainingStopParams res = TrainingStopParams.GetTraningStopParams(tsp);
+            return res;
+        }
+
+        public double[] GetWeigth()
+        {
+            XElement arrW = xmlNeuroNet.Element("TrainStatus").Element("Array");
+            var elements = arrW.Elements("Data");
+            double[] res = new double[elements.Count()];
+
+            foreach (var item in elements)
+            {
+                res[int.Parse(item.Attribute("Index").Value)] = double.Parse(item.Attribute("Value").Value);
+            }
+
             return res;
         }
 

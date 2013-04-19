@@ -23,6 +23,9 @@ using emds.common.Models;
 using emds.NsimMediator;
 using Encog.ML.Train;
 using Encog.Neural.Networks.Training.Propagation.Resilient;
+using emds.TrainLoggers;
+using Encog.Neural.Networks.Layers;
+using Encog.Engine.Network.Activation;
 
 namespace emds.utility
 {
@@ -52,6 +55,34 @@ namespace emds.utility
             // Keep the console window open in debug mode.
             Console.WriteLine("Press any key to exit.");
             Console.ReadKey();
+        }
+
+        public static void GetAllWeidtg()
+        {
+            var tmp = new np4load(@"..\..\..\NeuralNetworks\Cardiology\инфаркт_миокарда.np4");
+            var neuralNet = tmp.GetNeuralNetwork();
+            var w = tmp.GetWeigth();
+            neuralNet.DecodeFromArray(w);
+
+        }
+
+        public static void Experiment()
+        {
+            BasicNetwork net = new BasicNetwork();
+
+            net.AddLayer(
+                new BasicLayer(new ActivationLinear(), false, 3));
+
+            net.AddLayer(
+                new BasicLayer(new ActivationTANH(), true, 3));
+
+            net.AddLayer(
+                new BasicLayer(new ActivationLinear(), false, 2));
+
+            net.Structure.FinalizeStructure();
+            //Задание случайных весов?
+            net.Reset();
+
         }
 
         /// <summary>
@@ -147,7 +178,7 @@ namespace emds.utility
         public static void TrainNet()
         {
             var tmp = new np4load(@"..\..\..\NeuralNetworks\Cardiology\инфаркт_миокарда.np4");
-
+            
             TrainLogger tLog = TrainLogger.GetTrainLogger();
             
             Dictionary<string, object> dLog = new Dictionary<string, object>();
@@ -155,13 +186,14 @@ namespace emds.utility
             var stopParam = tmp.GetTrainingStopParams();
             int iterCount = 2500;//13943;
 
-            dLog.Add("event", "Init");
+            dLog.Add("event", "init");
             dLog.Add("NeuralNetName", "инфаркт_миокарда.np4");
-            dLog.Add("Path", @"..\..\..\NeuralNetworks\Cardiology");
-            dLog.Add("Анкета", "Кардиологическая");
+            dLog.Add("Path", @"..\..\..\NeuralNetworks\Cardiology\инфаркт_миокарда.np4");
+            dLog.Add("Анкета", "Кардиология");
             dLog.Add("IterationCount", iterCount);
             
             BasicMLDataSet tData = (BasicMLDataSet) tmp.GetTrainingData();
+            dLog.Add("TrainDataSize", tData.Count);
             //записать входные данные и проскалированные
             tLog.WriteEvent(dLog);
 
@@ -239,6 +271,7 @@ namespace emds.utility
 
         static void Main(string[] args)
         {
+            //Experiment();
             //var tmp = new np4load(@"..\..\..\NeuralNetworks\Cardiology\инфаркт_миокарда.np4");
             TrainNet();
             //TranslateDataInHash(4, 67);

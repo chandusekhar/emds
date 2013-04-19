@@ -8,7 +8,7 @@ using MongoDB;
 using MongoDB.Driver;
 using MongoDB.Bson;
 
-namespace emds
+namespace emds.TrainLoggers
 {
     public class TrainLogger : IDisposable
     {
@@ -64,7 +64,7 @@ namespace emds
             var doc = new BsonDocument(toBsonDocument);
             doc.Add("sid", IdSession);
             doc.Add("AgeNumber", AgeNumber);
-            collection.Insert(doc);
+            //collection.Insert(doc);
         }
 
         /// <summary>

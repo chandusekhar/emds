@@ -198,14 +198,14 @@ namespace Encog.Neural.Networks.Training.Propagation
                 record = new Dictionary<string, Object>();
                 record.Add("event", "iteration");
                 //record.Add("iteration", _iteration);
-                record.Add("weightBefore", _network.Flat.Weights);
+                record.Add("weightBefore", EngineArray.ArrayCopy(_network.Flat.Weights));
                 //
                 
                 PreIteration();
 
                 RollIteration();
 
-                var tl = emds.TrainLogger.GetTrainLogger();
+                var tl = emds.TrainLoggers.TrainLogger.GetTrainLogger();
                 tl.AgeNumber = _iteration;
 
                 CalculateGradients();

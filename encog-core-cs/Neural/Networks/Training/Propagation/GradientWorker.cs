@@ -217,7 +217,7 @@ namespace Encog.Neural.Networks.Training.Propagation
         {
             try
             {
-                emds.TrainLogger tl = emds.TrainLogger.GetTrainLogger();
+                emds.TrainLoggers.TrainLogger tl = emds.TrainLoggers.TrainLogger.GetTrainLogger();
                 _errorCalculation.Reset();
                 for (int i = _low; i <= _high; i++)
                 {

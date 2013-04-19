@@ -571,7 +571,7 @@ namespace Encog.Neural.Flat
         /// <param name="output">Output will be placed here.</param>
         public virtual void Compute(double[] input, double[] output)
         {
-            emds.TrainLogger tl = emds.TrainLogger.GetTrainLogger();
+            emds.TrainLoggers.TrainLogger tl = emds.TrainLoggers.TrainLogger.GetTrainLogger();
 
             int sourceIndex = _layerOutput.Length
                               - _layerCounts[_layerCounts.Length - 1];
