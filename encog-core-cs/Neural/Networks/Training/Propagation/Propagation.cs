@@ -222,6 +222,7 @@ namespace Encog.Neural.Networks.Training.Propagation
                 else
                 {
                     Learn();
+                    record.Add("Time", DateTime.Now);
                     //в этом методе заполняется ещё 1 градиент и после него можно записывать в БД
                     tl.WriteEvent(record);
                 }

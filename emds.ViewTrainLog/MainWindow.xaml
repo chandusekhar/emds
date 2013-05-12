@@ -110,7 +110,7 @@
                         
                         <ScrollViewer Grid.Column="2" Name="scrollViewer1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Height="Auto" HorizontalScrollBarVisibility="Visible">
                             <diag:Diagram Name="testD" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
-                                        Width="Auto" Height="Auto" Bounds="0,0,1093.70078740158,1122.51968503937" AutoResize="AllDirections" DelKeyAction="DeleteActiveItem" ShowGrid="False" Margin="0">
+                                        Width="Auto" Height="Auto" Bounds="0,0,1093.70078740158,1122.51968503937" AutoResize="AllDirections" DelKeyAction="DeleteActiveItem" ShowGrid="False" Margin="0" LinkEndsMovable="False" LinkCreating="testD_LinkCreating" NodeCreating="testD_NodeCreating">
                                 <diag:Diagram.LinkRouter>
                                     <diag:QuickRouter TurnCost="50" UBendMaxLen="30" />
                                 </diag:Diagram.LinkRouter>

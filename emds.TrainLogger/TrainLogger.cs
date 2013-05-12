@@ -22,7 +22,6 @@ namespace emds.TrainLoggers
 
         public string CollectionName { get; private set; }
         public string DbName { get; private set; }
-        public string HostIP { get; private set; }
         /// <summary>
         /// Формируется при каждом (!)создании объекта.
         /// </summary>
@@ -37,15 +36,14 @@ namespace emds.TrainLoggers
         /// </summary>
         public Dictionary<string, Object> LogRecord { get; set; }
 
-        private TrainLogger(string collectionName = "NeuralTrainLog", string dbName = "emdsdb", string hostIP = "localhost")
+        private TrainLogger(string collectionName = "NeuralTrainLog", string dbName = "emdsdb", string connectionStringMongo = "mongodb://localhost/?safe=true")
         {
             IdSession = Guid.NewGuid();
             isCreate = true;
             CollectionName = collectionName;
             DbName = dbName;
-            HostIP = hostIP;
             AgeNumber = -1;
-            connectionString = String.Format("mongodb://{0}/?safe=true", hostIP);
+            connectionString = connectionStringMongo;
             try
             {
                 server = MongoServer.Create(connectionString);
@@ -64,7 +62,7 @@ namespace emds.TrainLoggers
             var doc = new BsonDocument(toBsonDocument);
             doc.Add("sid", IdSession);
             doc.Add("AgeNumber", AgeNumber);
-            //collection.Insert(doc);
+            collection.Insert(doc);
         }
 
         /// <summary>

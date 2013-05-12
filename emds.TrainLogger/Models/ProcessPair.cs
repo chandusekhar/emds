@@ -40,6 +40,9 @@ namespace emds.TrainLoggers.Models
         [BsonElement("sid")]
         public Guid Sid { get; set; }
 
+        [BsonElement("Time")]
+        public DateTime Time { get; set; }
+
         public override string ToString()
         {
             return Pair.ToString();

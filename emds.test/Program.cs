@@ -191,6 +191,7 @@ namespace emds.utility
             dLog.Add("Path", @"..\..\..\NeuralNetworks\Cardiology\инфаркт_миокарда.np4");
             dLog.Add("Анкета", "Кардиология");
             dLog.Add("IterationCount", iterCount);
+            dLog.Add("Time", DateTime.Now);
             
             BasicMLDataSet tData = (BasicMLDataSet) tmp.GetTrainingData();
             dLog.Add("TrainDataSize", tData.Count);
@@ -226,18 +227,18 @@ namespace emds.utility
             //trainMetod.Iteration(stopParam.Iterations);
 
             trainMetod.Iteration(iterCount);
-            var arrWeight = neuralNet.DumpWeights().Split(',');
-            
+            //var arrWeight = neuralNet.DumpWeights().Split(',');
+
             //using (FileLogger fl = FileLogger.GetLogger())
             //{
             //    fl.WriteString(neuralNet.DumpWeights());
-            //    for (int i = 0; i<tDataScale.Data.Count; i++)//var item in tDataScale.Data)
+            //    for (int i = 0; i < tDataScale.Data.Count; i++)//var item in tDataScale.Data)
             //    {
-            //        fl.WriteString("Входной вектор: "+GetString(tData.Data[i].InputArray));
+            //        fl.WriteString("Входной вектор: " + GetString(tData.Data[i].InputArray));
 
             //        var res = neuralNet.Compute(tDataScale.Data[i].Input);
 
-            //        fl.WriteString("Результат: "+GetString(res.Data));
+            //        fl.WriteString("Результат: " + GetString(res.Data));
 
             //        var sRes = scale.RestoreIdealVector(res);
 
@@ -247,9 +248,9 @@ namespace emds.utility
             //}
                         
             trainMetod.FinishTraining();
-            int countW = neuralNet.EncodedArrayLength();
-            double[] w = new double[countW];
-            neuralNet.EncodeToArray(w);
+            //int countW = neuralNet.EncodedArrayLength();
+            //double[] w = new double[countW];
+            //neuralNet.EncodeToArray(w);
 
             Console.WriteLine("!!!");
             //for (int i = 0; i < stopParam.Iterations; i++)

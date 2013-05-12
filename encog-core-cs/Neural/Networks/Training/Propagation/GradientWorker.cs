@@ -214,7 +214,7 @@ namespace Encog.Neural.Networks.Training.Propagation
         /// </summary>
         ///
         public void Run()
-        {
+         {
             try
             {
                 emds.TrainLoggers.TrainLogger tl = emds.TrainLoggers.TrainLogger.GetTrainLogger();
@@ -230,7 +230,7 @@ namespace Encog.Neural.Networks.Training.Propagation
                     tl.LogRecord = record;
                     
                     Process(_pair.InputArray, _pair.IdealArray, _pair.Significance);
-
+                    record.Add("Time", DateTime.Now);
                     tl.WriteEvent(record);
                 }
                 double error = _errorCalculation.Calculate();

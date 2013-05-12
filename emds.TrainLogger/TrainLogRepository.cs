@@ -15,21 +15,20 @@ namespace emds.TrainLoggers
         private MongoServer server;
         private MongoDatabase database;
         private MongoCollection collection;
-        private string connectionString;
-
+        
         public string CollectionName { get; private set; }
         public string DbName { get; private set; }
-        public string HostIP { get; private set; }
+        public string ConnectionString { get; private set; }
 
-        public TrainLogRepository(string collectionName = "NeuralTrainLog", string dbName = "emdsdb", string hostIP = "localhost")
+        public TrainLogRepository(string collectionName = "NeuralTrainLog", string dbName = "emdsdb", string connectionString = "mongodb://localhost/?safe=true")
         {
             CollectionName = collectionName;
             DbName = dbName;
-            HostIP = hostIP;
-            connectionString = String.Format("mongodb://{0}/?safe=true", hostIP);
+            ConnectionString = String.Format("{0}/{1}", connectionString, dbName);
             try
             {
-                server = MongoServer.Create(connectionString);
+                var client = new MongoClient(ConnectionString);
+                server = client.GetServer();
                 database = server.GetDatabase(dbName);
                 collection = database.GetCollection(collectionName);
                 server.Ping();

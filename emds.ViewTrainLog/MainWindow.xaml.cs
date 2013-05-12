@@ -59,29 +59,9 @@ namespace emds.ViewTrainLog
             neuralNetIter = null;
             neuralNetPair = null;
 
-            rep = new TrainLogRepository();
+            rep = new TrainLogRepository(AppConfigHelper.GetCollectionName, AppConfigHelper.GetDBName, AppConfigHelper.GetMongoDBConnectionString);
 
             InitializeComponent();
-
-            //neuralNet = new BasicNetwork();
-            //neuralNet.AddLayer(
-            //    new BasicLayer(new ActivationLinear(), true, 3));
-
-            //neuralNet.AddLayer(
-            //    new BasicLayer(new ActivationTANH(), true, 2));
-
-            //neuralNet.AddLayer(
-            //    new BasicLayer(new ActivationTANH(), true, 2));
-
-            //neuralNet.AddLayer(
-            //    new BasicLayer(new ActivationLinear(), true, 2));
-
-            //neuralNet.Structure.FinalizeStructure();
-            //neuralNet.Reset();
-            //DrawNeuralNet();
-
-            //DiagramHelper.CreateNode(testD, 50, 50, 30, 30, "123");
-            //DiagramHelper.CreateNode(testD, 50, 100, 30, 30, "321");
         }
 
         private void cbTrainsLog_Initialized(object sender, EventArgs e)
@@ -502,6 +482,17 @@ namespace emds.ViewTrainLog
             if (cbProcessPair.SelectedItem != null && cbProcessPair.SelectedIndex > -1)
                 cbProcessPair.SelectedIndex -= 1;
         }
+
+        private void testD_LinkCreating(object sender, LinkValidationEventArgs e)
+        {
+            e.Cancel = true;
+        }
+
+        private void testD_NodeCreating(object sender, NodeValidationEventArgs e)
+        {
+            e.Cancel = true;
+        }
+
 
     }
 }

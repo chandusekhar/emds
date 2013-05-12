@@ -37,6 +37,9 @@ namespace emds.TrainLoggers.Models
         [BsonElement("TrainDataSize")]
         public int TrainDataSize { get; set; }
 
+        [BsonElement("Time")]
+        public DateTime Time { get; set; }
+
         public override string ToString()
         {
             return NeuralNetName.Replace('_', ' ').Remove(NeuralNetName.Length - 4, 4);
