@@ -31,6 +31,8 @@ using MDS.FillForm.DomainModel.Entities;
 using Encog.ML.Data;
 using System.Xml.Linq;
 
+using System.IO;
+
 namespace emds.ViewTrainLog
 {
     /// <summary>
@@ -54,6 +56,8 @@ namespace emds.ViewTrainLog
 
         private TemplXML.FormTemplate templ;
 
+        private ShapeNode _selectedNode;
+
         public MainWindow()
         {
             neuralNetIter = null;
@@ -68,7 +72,7 @@ namespace emds.ViewTrainLog
         {
             trains = rep.GetAllTrainLog();
             cbTrainsLog.ItemsSource = trains;
-                        
+
             //if (trains.Count() > 0)
             //    cbTrainsLog.SelectedIndex = 0;
         }
@@ -140,6 +144,79 @@ namespace emds.ViewTrainLog
             }
         }
 
+        private void cbParametrs_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cbParametrs.SelectedIndex != -1 && cbAgeNumber.SelectedItem != null)
+            {
+                Iteration curIt = cbAgeNumber.SelectedItem as Iteration;
+                switch (cbParametrs.SelectedIndex)
+                {
+                    case 0:
+                        {
+                            neuralNetIter.DecodeFromArray(curIt.WeightBefore);
+                            ReLabelLinks(graphIterations, neuralNetIter);
+                            break;
+                        }
+                    case 1:
+                        {
+                            neuralNetIter.DecodeFromArray(curIt.GradientR);
+                            ReLabelLinks(graphIterations, neuralNetIter);
+                            break;
+                        }
+                    case 2:
+                        {
+                            neuralNetIter.DecodeFromArray(curIt.NewWeights);
+                            ReLabelLinks(graphIterations, neuralNetIter);
+                            break;
+                        }
+                }
+            }
+        }
+
+        private void cbParametrsPair_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cbParametrsPair.SelectedIndex != -1)
+            {
+                DrawPairParametrs();
+            }
+        }
+
+        private void btPlusAgeNumber_Click(object sender, RoutedEventArgs e)
+        {
+            InitEvent ie = cbTrainsLog.SelectedItem as InitEvent;
+            if (cbAgeNumber.SelectedItem != null && cbAgeNumber.SelectedIndex + 1 < ie.IterationCount)
+                cbAgeNumber.SelectedIndex += 1;
+        }
+
+        private void btMinusAgeNumber_Click(object sender, RoutedEventArgs e)
+        {
+            if (cbAgeNumber.SelectedItem != null && cbAgeNumber.SelectedIndex > -1)
+                cbAgeNumber.SelectedIndex -= 1;
+        }
+
+        private void btPlusPairNumber_Click(object sender, RoutedEventArgs e)
+        {
+            InitEvent ie = cbTrainsLog.SelectedItem as InitEvent;
+            if (cbProcessPair.SelectedItem != null && cbProcessPair.SelectedIndex + 1 < ie.TrainDataSize)
+                cbProcessPair.SelectedIndex += 1;
+        }
+
+        private void btMinusPairNumber_Click(object sender, RoutedEventArgs e)
+        {
+            if (cbProcessPair.SelectedItem != null && cbProcessPair.SelectedIndex > -1)
+                cbProcessPair.SelectedIndex -= 1;
+        }
+
+        private void testD_LinkCreating(object sender, LinkValidationEventArgs e)
+        {
+            e.Cancel = true;
+        }
+
+        private void testD_NodeCreating(object sender, NodeValidationEventArgs e)
+        {
+            e.Cancel = true;
+        }
+
         private void DrawNeuralNet(Diagram diagram, out List<ShapeNode>[] nodes, BasicNetwork neuralNet)
         {
             if (diagram.Items.Count > 0)
@@ -147,12 +224,10 @@ namespace emds.ViewTrainLog
             //получение шаблона
             InitEvent netInit = cbTrainsLog.SelectedItem as InitEvent;
             //TemplXML.FormTemplate templ;
-            using (var db = MDSDB.GetInstance())
-            {
-                var catT = db.TemplateCategories.First(x => x.Name == netInit.Anketa);
-                var tempC = db.FormTemplate.Where(x => x.TemplateCategoryId == catT.Id).OrderByDescending(y => y.Version).First();
-                templ = TemplXML.FormTemplate.FromXml(tempC.TemplateMarkup);
-            }
+            string pathXML = netInit.Path.Replace(".np4", ".xml");
+            if (!File.Exists(pathXML))
+                MessageBox.Show("Форма не найдена");
+            templ = TemplXML.FormTemplate.FromXml(XElement.Load(pathXML));
             
             double dx = 400;
             double rastNode = 30;
@@ -168,6 +243,7 @@ namespace emds.ViewTrainLog
                 for (int j = 0; j < neuralNet.Flat.LayerCounts[i]; j++)
                 {
                     ShapeNode tmp = DiagramHelper.CreateNode(diagram, startX, startY, diam, diam, j.ToString());
+                    tmp.MouseLeftButtonDown += nodeSelected_MouseLeftButtonDown;;
                     curN.Add(tmp);
 
                     if (i == neuralNet.LayerCount - 1 && j <neuralNet.InputCount)
@@ -204,19 +280,20 @@ namespace emds.ViewTrainLog
             }
         }
 
+        void nodeSelected_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            ShapeNode node = sender as ShapeNode;
+            if (_selectedNode != null)
+                DiagramHelper.UnSelectNode(_selectedNode);
+            _selectedNode = node;
+            DiagramHelper.SelectNode(node);
+        }
+
         private void DrawNeuralNetPair(Diagram diagram, out List<ShapeNode>[] nodes, BasicNetwork neuralNet)
         {
             if (diagram.Items.Count > 0)
                 diagram.ClearAll();
-            //получение шаблона
-            //InitEvent netInit = cbTrainsLog.SelectedItem as InitEvent;
-            //TemplXML.FormTemplate templ;
-            //using (var db = MDSDB.GetInstance())
-            //{
-            //    var catT = db.TemplateCategories.First(x => x.Name == netInit.Anketa);
-            //    var tempC = db.FormTemplate.Where(x => x.TemplateCategoryId == catT.Id).OrderByDescending(y => y.Version).First();
-            //    templ = TemplXML.FormTemplate.FromXml(tempC.TemplateMarkup);
-            //}
+
             ProcessPair pp = cbProcessPair.SelectedItem as ProcessPair;
             TemplXML.FormData form = ConvertDataArrayToXml(templ, trainingData[pp.Pair].InputArray); 
 
@@ -236,6 +313,7 @@ namespace emds.ViewTrainLog
                 for (int j = 0; j < neuralNet.Flat.LayerCounts[i]; j++)
                 {
                     ShapeNode tmp = DiagramHelper.CreateNode(diagram, startX, startY, diam*2, diam, j.ToString());
+                    tmp.MouseLeftButtonDown += nodeSelected_MouseLeftButtonDown;
                     curN.Add(tmp);
 
                     if (i == neuralNet.LayerCount - 1 && j < neuralNet.InputCount)
@@ -397,35 +475,6 @@ namespace emds.ViewTrainLog
             }
         }
 
-        private void cbParametrs_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (cbParametrs.SelectedIndex != -1 && cbAgeNumber.SelectedItem != null)
-            {
-                Iteration curIt = cbAgeNumber.SelectedItem as Iteration;
-                switch (cbParametrs.SelectedIndex)
-                {
-                    case 0: 
-                        {
-                            neuralNetIter.DecodeFromArray(curIt.WeightBefore);
-                            ReLabelLinks(graphIterations, neuralNetIter);
-                            break; 
-                        }
-                    case 1:
-                        {
-                            neuralNetIter.DecodeFromArray(curIt.GradientR);
-                            ReLabelLinks(graphIterations, neuralNetIter);
-                            break;
-                        }
-                    case 2:
-                        {
-                            neuralNetIter.DecodeFromArray(curIt.NewWeights);
-                            ReLabelLinks(graphIterations, neuralNetIter);
-                            break;
-                        }
-                }
-            }
-        }
-
         private TemplXML.FormData ConvertDataArrayToXml(TemplXML.FormTemplate templ, double[] data)
         {
             var res = new TemplXML.FormData(templ);
@@ -448,51 +497,6 @@ namespace emds.ViewTrainLog
 
             return res;
         }
-
-        private void cbParametrsPair_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (cbParametrsPair.SelectedIndex != -1)
-            {
-                DrawPairParametrs();
-            }
-        }
-
-        private void btPlusAgeNumber_Click(object sender, RoutedEventArgs e)
-        {
-            InitEvent ie = cbTrainsLog.SelectedItem as InitEvent;
-            if(cbAgeNumber.SelectedItem != null && cbAgeNumber.SelectedIndex + 1 < ie.IterationCount)
-                cbAgeNumber.SelectedIndex += 1;
-        }
-
-        private void btMinusAgeNumber_Click(object sender, RoutedEventArgs e)
-        {
-            if (cbAgeNumber.SelectedItem != null && cbAgeNumber.SelectedIndex > -1)
-                cbAgeNumber.SelectedIndex -= 1;
-        }
-
-        private void btPlusPairNumber_Click(object sender, RoutedEventArgs e)
-        {
-            InitEvent ie = cbTrainsLog.SelectedItem as InitEvent;
-            if (cbProcessPair.SelectedItem != null && cbProcessPair.SelectedIndex + 1 < ie.TrainDataSize)
-                cbProcessPair.SelectedIndex += 1;
-        }
-
-        private void btMinusPairNumber_Click(object sender, RoutedEventArgs e)
-        {
-            if (cbProcessPair.SelectedItem != null && cbProcessPair.SelectedIndex > -1)
-                cbProcessPair.SelectedIndex -= 1;
-        }
-
-        private void testD_LinkCreating(object sender, LinkValidationEventArgs e)
-        {
-            e.Cancel = true;
-        }
-
-        private void testD_NodeCreating(object sender, NodeValidationEventArgs e)
-        {
-            e.Cancel = true;
-        }
-
 
     }
 }

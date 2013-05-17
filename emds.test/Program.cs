@@ -274,8 +274,16 @@ namespace emds.utility
         {
             //Experiment();
             //var tmp = new np4load(@"..\..\..\NeuralNetworks\Cardiology\инфаркт_миокарда.np4");
-            TrainNet();
+            //TrainNet();
             //TranslateDataInHash(4, 67);
+
+            emds.Ontology.OntologyHelper oh = new Ontology.OntologyHelper();
+            oh.LoadOwlGraph(@"..\..\..\OntoMag.owl");
+
+            foreach (var item in oh.OwlGraph.Nodes)
+            {
+                Console.WriteLine(item);
+            }
 
             Console.WriteLine("Done");
             Console.ReadKey();

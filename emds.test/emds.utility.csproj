@@ -47,6 +47,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\mongocsharpdriver.1.8.0\lib\net35\MongoDB.Driver.dll</HintPath>
     </Reference>
+    <Reference Include="OwlDotNetApi, Version=1.0.2435.18842, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\OwlDotNetApi.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
@@ -69,6 +73,10 @@
       <Project>{75621124-1cbd-49c6-9a85-898a8dbf05fc}</Project>
       <Name>emds.common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\emds.Ontology\emds.Ontology.csproj">
+      <Project>{0d7d3b0e-75b4-447f-9d9a-b21a40def7c2}</Project>
+      <Name>emds.Ontology</Name>
+    </ProjectReference>
     <ProjectReference Include="..\emds.TrainLogger\emds.TrainLoggers.csproj">
       <Project>{414db410-1b9e-4a44-a054-3d9cd2753cea}</Project>
       <Name>emds.TrainLoggers</Name>
@@ -81,6 +89,9 @@
       <Project>{a2f106e7-8103-40be-b15c-0b29e9bce3bd}</Project>
       <Name>emds.NsimMediator</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

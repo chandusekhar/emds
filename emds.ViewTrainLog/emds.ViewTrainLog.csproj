@@ -40,7 +40,8 @@
     <Reference Include="MDS.Common">
       <HintPath>..\lib\MDS.Common.dll</HintPath>
     </Reference>
-    <Reference Include="MDS.FillForm.DomainModel">
+    <Reference Include="MDS.FillForm.DomainModel, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\lib\MDS.FillForm.DomainModel.dll</HintPath>
     </Reference>
     <Reference Include="mindfusion.diagramming.wpf">

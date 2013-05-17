@@ -33,5 +33,10 @@ namespace emds.common
             get { return GetAppSettingValue("collectionName"); }
         }
 
+        public static string GetOntologyPath
+        {
+            get { return GetAppSettingValue("OntologyPath"); }
+        }
+
     }
 }
