@@ -57,6 +57,7 @@ namespace emds.ViewTrainLog
         private TemplXML.FormTemplate templ;
 
         private ShapeNode _selectedNode;
+        private DiagramLink _selectedLink;
 
         public MainWindow()
         {
@@ -67,6 +68,8 @@ namespace emds.ViewTrainLog
 
             InitializeComponent();
         }
+
+        #region "Обработчики событий"
 
         private void cbTrainsLog_Initialized(object sender, EventArgs e)
         {
@@ -217,6 +220,8 @@ namespace emds.ViewTrainLog
             e.Cancel = true;
         }
 
+        #endregion
+
         private void DrawNeuralNet(Diagram diagram, out List<ShapeNode>[] nodes, BasicNetwork neuralNet)
         {
             if (diagram.Items.Count > 0)
@@ -249,7 +254,8 @@ namespace emds.ViewTrainLog
                     if (i == neuralNet.LayerCount - 1 && j <neuralNet.InputCount)
                     {
                         ShapeNode q = DiagramHelper.CreateNode(Shapes.Rectangle, diagram, startX - dx, startY, 200, 50, templ.Fields[j].Title);
-                        DiagramHelper.CreateLink(diagram, q, tmp);
+                        DiagramLink link = DiagramHelper.CreateLink(diagram, q, tmp);
+                        link.MouseLeftButtonDown += linkSelect_MouseLeftButtonDown;
                     }
 
                     startY += diam + rastNode;
@@ -274,21 +280,13 @@ namespace emds.ViewTrainLog
                     for (int y = 0; y < countN; y++)
                     {
                         tmpWeigth = neuralNet.GetWeight(neuralNet.LayerCount - i - 1, x, y).ToString("F4");
-                        DiagramHelper.CreateLink(diagram, nodes[i][x], nodes[i - 1][y], tmpWeigth);
+                        var link = DiagramHelper.CreateLink(diagram, nodes[i][x], nodes[i - 1][y], tmpWeigth);
+                        link.MouseLeftButtonDown += linkSelect_MouseLeftButtonDown;
                     }
                 }
             }
         }
-
-        void nodeSelected_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            ShapeNode node = sender as ShapeNode;
-            if (_selectedNode != null)
-                DiagramHelper.UnSelectNode(_selectedNode);
-            _selectedNode = node;
-            DiagramHelper.SelectNode(node);
-        }
-
+                        
         private void DrawNeuralNetPair(Diagram diagram, out List<ShapeNode>[] nodes, BasicNetwork neuralNet)
         {
             if (diagram.Items.Count > 0)
@@ -312,7 +310,7 @@ namespace emds.ViewTrainLog
                 List<ShapeNode> curN = new List<ShapeNode>();
                 for (int j = 0; j < neuralNet.Flat.LayerCounts[i]; j++)
                 {
-                    ShapeNode tmp = DiagramHelper.CreateNode(diagram, startX, startY, diam*2, diam, j.ToString());
+                    ShapeNode tmp = DiagramHelper.CreateNode(diagram, startX, startY, diam, diam, j.ToString());
                     tmp.MouseLeftButtonDown += nodeSelected_MouseLeftButtonDown;
                     curN.Add(tmp);
 
@@ -330,7 +328,7 @@ namespace emds.ViewTrainLog
                             label = tmpF.Value.Title;
                         }
                         var tmpLink = DiagramHelper.CreateLink(diagram, q, tmp, label);
-                                                
+                        tmpLink.MouseLeftButtonDown += linkSelect_MouseLeftButtonDown;
                         graphPairLinkInput.Add(tmpLink);
                     }
 
@@ -356,7 +354,8 @@ namespace emds.ViewTrainLog
                     for (int y = 0; y < countN; y++)
                     {
                         tmpWeigth = neuralNet.GetWeight(neuralNet.LayerCount - i - 1, x, y).ToString("F4");
-                        DiagramHelper.CreateLink(diagram, nodes[i][x], nodes[i - 1][y], tmpWeigth);
+                        var link = DiagramHelper.CreateLink(diagram, nodes[i][x], nodes[i - 1][y], tmpWeigth);
+                        link.MouseLeftButtonDown += linkSelect_MouseLeftButtonDown;
                     }
                 }
             }
@@ -496,6 +495,50 @@ namespace emds.ViewTrainLog
             }
 
             return res;
+        }
+
+        void nodeSelected_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            ShapeNode node = sender as ShapeNode;
+            if (_selectedLink != null)
+            {
+                DiagramHelper.UnSelectLink(_selectedLink);
+                _selectedLink = null;
+            }
+
+            if(node == _selectedNode)
+            {
+                DiagramHelper.UnSelectNode(_selectedNode);
+                _selectedNode = null;
+                return;
+            }
+
+            if (_selectedNode != null)
+                DiagramHelper.UnSelectNode(_selectedNode);
+            _selectedNode = node;
+            DiagramHelper.SelectNode(node);
+        }
+
+        void linkSelect_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (_selectedNode != null)
+            {
+                DiagramHelper.UnSelectNode(_selectedNode);
+                _selectedNode = null;
+            }
+
+            DiagramLink link = sender as DiagramLink;
+            if (link == _selectedLink)
+            {
+                DiagramHelper.UnSelectLink(link);
+                _selectedLink = null;
+                return;
+            }
+
+            if (_selectedLink != null)
+                DiagramHelper.UnSelectLink(_selectedLink);
+            _selectedLink = sender as DiagramLink;
+            DiagramHelper.SelectLink(_selectedLink);
         }
 
     }

@@ -76,6 +76,20 @@ namespace emds.ViewTrainLog
             }
         }
 
+        public static void SelectLink(DiagramLink link)
+        {
+            SelectNodeLook((ShapeNode)link.Destination);
+            SelectLinkLook(link);
+            SelectNodeLook((ShapeNode)link.Origin);
+        }
+
+        public static void UnSelectLink(DiagramLink link)
+        {
+            UnSelectNodeLook((ShapeNode)link.Destination);
+            UnSelectLinkLook(link);
+            UnSelectNodeLook((ShapeNode)link.Origin);
+        }
+
         private static void SelectLinkLook(DiagramLink link)
         {
             link.Brush = Brushes.Red;
